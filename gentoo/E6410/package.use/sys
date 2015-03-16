@@ -1,0 +1,6 @@
+#sys-devel/gcc gcj
+sys-apps/gnome-disk-utility fat
+sys-libs/zlib minizip
+sys-fs/ntfs3g xattr
+sys-block/gparted ntfs fat
+
