@@ -1,0 +1,23 @@
+# !/bin/sh
+# from http://wiki.gentoo.org/wiki/MTP#Go-mtpfs
+# http://wiki.gentoo.org/wiki/MTP#simple-mtpfs
+
+function help {
+	echo "Usage: "
+	echo -e "\t$0 mount|unmount"
+}
+
+if [ "$1" == "mount" ]; then
+	mkdir -p ~/AndroidDevice
+#	go-mtpfs ~/AndroidDevice &
+	simple-mtpfs ~/AndroidDevice
+	echo "mounted at ~/AndroidDevice"
+
+elif [ "$1" == "unmount" ]; then
+	fusermount -u ~/AndroidDevice
+	echo "unmounted"
+
+else
+	help
+	exit 1
+fi

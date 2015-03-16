@@ -1,0 +1,10 @@
+#!/bin/bash
+# exec grep "$@" | grep -v 'Binary file ..* matches' | fgrep -v '.svn'
+
+
+if [ $# -lt 1 ]; then
+	echo "Usage: bomgrep PATTERN"
+	exit 1
+fi
+
+exec grep -nHs --color=always --exclude="*.vcproj" --exclude="*.sln" --exclude="*.pro" --exclude="*.pbxproj" --exclude="*.icproj" --exclude="*.o" --exclude="Makefile" --exclude="*ChangeLog*" --exclude="config*" --exclude="*.scons" --exclude="SConstruct" --exclude="TAGS" --exclude-dir=".svn" --exclude-dir=".output" "$@" | grep -v "Binary file ..* matches" | sed -r 's/[\t]+//'
