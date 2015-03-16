@@ -3,21 +3,24 @@
 # http://wiki.gentoo.org/wiki/MTP#simple-mtpfs
 
 function help {
-	echo "Usage: "
-	echo -e "\t$0 mount|unmount"
+    echo "Usage: "
+    echo -e "\t$0 mount|unmount"
 }
 
+MOUNT_DIR=${HOME}/AndroidDevice
+
 if [ "$1" == "mount" ]; then
-	mkdir -p ~/AndroidDevice
-#	go-mtpfs ~/AndroidDevice &
-	simple-mtpfs ~/AndroidDevice
-	echo "mounted at ~/AndroidDevice"
+    ( mkdir ${MOUNT_DIR} \
+	    && simple-mtpfs ${MOUNT_DIR} \
+	    && echo "mounted at ${MOUNT_DIR}" ) \
+	|| echo "failed"
 
 elif [ "$1" == "unmount" ]; then
-	fusermount -u ~/AndroidDevice
-	echo "unmounted"
-
+    ( fusermount -u ${MOUNT_DIR} \
+	    && [ -f $MOUNT_DIR ] \
+	    && rmdir ${MOUNT_DIR} && echo "unmounted" ) \
+	|| echo "failed"
 else
-	help
-	exit 1
+    help
+    exit 1
 fi
