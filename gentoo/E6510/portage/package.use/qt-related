@@ -1,0 +1,6 @@
+# Qt libs specific
+dev-qt/* pch webkit postgres icu gtkstyle
+dev-qt/qthelp doc
+
+# Qt based projects
+dev-qt/qt-creator subversion valgrind doc
