@@ -1,0 +1,83 @@
+#!/bin/sh
+# from http://wiki.gentoo.org/wiki/MTP#Go-mtpfs
+# http://wiki.gentoo.org/wiki/MTP#simple-mtpfs
+
+function validate {
+    ACTION=$1
+    DEVICE=$2
+    shift 2
+
+    if [[ !(${ACTION} == "mount" || ${ACTION} == "unmount" || ${ACTION} == "umount") \
+                || !(${DEVICE} == "android" || ${DEVICE} == "bomgar") ]]; then
+        echo "invalid arguments"
+        return 0
+    else
+        return 1
+    fi
+}
+
+function help {
+    echo "Usage: "
+    echo -e "\t$0 mount|unmount DEVICE\n"
+    echo -e "\twhere DEVICE can be an 'android' or 'bomgar'\n"
+}
+
+function read_mount_confs {
+    local KEY=$1
+    local RECORD=`egrep "^${KEY}" ${HOME}/.mount-dirs-rc`
+    if [ ! -z $RECORD ]; then
+        echo $(echo $RECORD|cut -d ',' -f 3)
+    fi
+}
+
+function do_android {
+
+    if [ $ACTION == "mount" ]; then
+        ( mkdir ${MOUNT_DIR} \
+                && simple-mtpfs ${MOUNT_DIR} \
+                && echo "mounted at ${MOUNT_DIR}" ) \
+            || echo "failed"
+    else
+        ( fusermount -u ${MOUNT_DIR} \
+                && [ -f $MOUNT_DIR ] \
+                && rmdir -v ${MOUNT_DIR} && echo "unmounted" ) \
+            || echo "failed"
+    fi
+}
+
+function do_cifs {
+
+    local CIFS_SHARE_NAME=$(echo $MOUNT_DIR | cut -d '/' -f 2)
+    local USER=`whoami`
+    
+    if [ $ACTION == "mount" ]; then
+        sudo mkdir -vp ${MOUNT_DIR}
+        ( sudo mount -v -t cifs -o \
+               username=$USER,uid=$USER,gid=$USER \
+               "//${CIFS_SHARE_NAME}/public/" ${MOUNT_DIR} \
+                && echo "mounted at ${MOUNT_DIR}" ) \
+            || echo "failed"
+    else
+        ( sudo umount -v ${MOUNT_DIR} \
+                && [ -f $MOUNT_DIR ] \
+                && sudo rmdir -v ${MOUNT_DIR} && echo "unmounted" ) \
+            || echo "failed"
+    fi
+}
+
+validate $*
+retval=$?
+
+if [[ $retval -eq 0 ]]; then
+    help
+    exit 1
+fi
+
+MOUNT_DIR=$(read_mount_confs $DEVICE)
+
+if [ $DEVICE == "android" ]; then
+    do_android
+
+elif [ $DEVICE == "bomgar" ]; then
+    do_cifs
+fi
