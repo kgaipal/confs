@@ -32,7 +32,7 @@ function read_mount_confs {
     local KEY=$1
     local RECORD=`egrep "^${KEY}" ${HOME}/.mount-dirs-rc`
     if [ ! -z $RECORD ]; then
-        echo $(echo $RECORD|cut -d ',' -f 3)
+        echo $(echo $RECORD|cut -d ':' -f 3)
     fi
 }
 
@@ -60,7 +60,7 @@ function do_cifs {
     local USER=`whoami`
 
     if [ $ACTION == "mount" ]; then
-        sudo mkdir -vp ${MOUNT_DIR}
+        mkdir -vp ${MOUNT_DIR}
         echo "mounting CIFS share '${CIFS_SHARE_NAME}' at ${MOUNT_DIR}..."
         ( sudo mount -v -t cifs -o \
                username=$USER,uid=$USER,gid=$USER \
@@ -69,8 +69,7 @@ function do_cifs {
             || echo "failed"
     else
         ( sudo umount -v ${MOUNT_DIR} \
-                && [ -f $MOUNT_DIR ] \
-                && sudo rmdir -v ${MOUNT_DIR} && echo "done" ) \
+                && rmdir -v ${MOUNT_DIR} && echo "done" ) \
             || echo "failed"
     fi
 }
