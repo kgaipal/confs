@@ -42,13 +42,12 @@ function do_android {
     # http://wiki.gentoo.org/wiki/MTP#simple-mtpfs
 
     if [ $ACTION == "mount" ]; then
-        ( mkdir ${MOUNT_DIR} \
+        ( mkdir -pv ${MOUNT_DIR} \
                 && simple-mtpfs ${MOUNT_DIR} \
                 && echo "mounted at ${MOUNT_DIR}" ) \
             || echo "failed"
     else
         ( fusermount -u ${MOUNT_DIR} \
-                && [ -f $MOUNT_DIR ] \
                 && rmdir -v ${MOUNT_DIR} && echo "unmounted" ) \
             || echo "failed"
     fi
@@ -60,7 +59,7 @@ function do_cifs {
     local USER=`whoami`
 
     if [ $ACTION == "mount" ]; then
-        mkdir -vp ${MOUNT_DIR}
+        mkdir -pv ${MOUNT_DIR}
         echo "mounting CIFS share '${CIFS_SHARE_NAME}' at ${MOUNT_DIR}..."
         ( sudo mount -v -t cifs -o \
                username=$USER,uid=$USER,gid=$USER \
