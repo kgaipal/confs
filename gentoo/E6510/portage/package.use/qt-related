@@ -4,3 +4,8 @@ dev-qt/qthelp doc
 
 # Qt based projects
 dev-qt/qt-creator subversion valgrind doc
+
+# required by dev-qt/qt-creator-2.8.1
+# required by @selected
+# required by @world (argument)
+=dev-libs/botan-1.10.5 threads
