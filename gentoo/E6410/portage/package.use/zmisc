@@ -4,7 +4,7 @@ app-admin/testdisk ntfs
 app-editors/emacs gconf gsettings sound xft gzip-el
 app-text/evince xps
 gnome-base/nautilus sendto
-media-gfx/gimp jpeg2k postscript smp
+media-gfx/gimp jpeg2k postscript smp xpm wmf
 gnome-base/gnome-shell networkmanager
 net-p2p/transmission -qt4  # no qt gui, gtk is enough
 
