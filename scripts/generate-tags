@@ -5,7 +5,7 @@ if [ $# -lt 1 ]; then
 	exit 1
 fi
 
-TARGET_DIR=`readlink -f $1`
+TARGET_DIR=$(readlink -f $1)
 shift
 
 pushd $TARGET_DIR > /dev/null
