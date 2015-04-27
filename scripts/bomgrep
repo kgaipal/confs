@@ -6,7 +6,7 @@ if [ $# -lt 1 ]; then
 	exit 1
 fi
 
-exec grep -nHs --color=always \
+exec grep -nHsI --color=always \
      --exclude="*.*pro[j]" \
      --exclude="*.[p]o" \
      --exclude="*.scons" \
@@ -19,5 +19,4 @@ exec grep -nHs --color=always \
      --exclude-dir=".svn" \
      --exclude-dir=".output" \
      "$@" \
-    | grep -v "Binary file ..* matches" \
     | sed -r 's/[\t]+//'
