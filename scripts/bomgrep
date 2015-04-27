@@ -1,5 +1,4 @@
 #!/bin/bash
-# exec grep "$@" | grep -v 'Binary file ..* matches' | fgrep -v '.svn'
 
 if [ $# -lt 1 ]; then
 	echo "Usage: bomgrep PATTERN"
