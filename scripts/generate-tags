@@ -1,8 +1,8 @@
 #!/bin/bash
 
 if [ $# -lt 1 ]; then
-	echo "Usage: generate-tags SOURCE_DIR"
-	exit 1
+    echo "Usage: generate-tags SOURCE_DIR"
+    exit 1
 fi
 
 TARGET_DIR=$(readlink -f $1)
@@ -20,7 +20,15 @@ fi
 echo -n "Creating tag file: '$TAGFILE'... "
 
 find $TARGET_DIR -readable -type f \( -name *.c* -o -name *.h \) -print \
-    | etags --append --ignore-indentation --members --language=c++ --language=c -
+    | etags --append \
+            --declarations \
+            --ignore-indentation \
+            --language=c \
+            --language=c++ \
+            --language=objc \
+            --language=python \
+            --members \
+            -
 
 echo "done."
 popd > /dev/null
