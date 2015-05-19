@@ -1,10 +1,9 @@
 #
 # Necessary packages and their flags I need
 #
-app-editors/emacs gconf gnutls gsettings gzip-el xft
-app-text/evince xps
+app-editors/emacs gconf gnutls gsettings gzip-el xft libxml2
 media-gfx/gimp jpeg2k postscript smp
-www-client/firefox linguas_hi_IN system-cairo system-jpeg system-icu system-libvpx wifi
+www-client/firefox system-cairo system-jpeg system-icu system-libvpx wifi
 
 #
 # Others to satisfy portage @world, will remove later ... may be?
@@ -14,3 +13,4 @@ www-client/firefox linguas_hi_IN system-cairo system-jpeg system-icu system-libv
 =media-libs/cogl-1.18.2-r1 gles2
 =media-libs/clutter-1.20.0 egl
 =media-libs/mesa-10.3.7-r1 gles2
+

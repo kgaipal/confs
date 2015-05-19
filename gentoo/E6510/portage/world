@@ -9,7 +9,6 @@ app-editors/emacs
 app-editors/nano
 app-emacs/auctex
 app-emacs/php-mode
-app-emulation/vboxgtk
 app-emulation/virtualbox
 app-emulation/virtualbox-modules
 app-misc/colordiff
@@ -17,8 +16,10 @@ app-portage/eix
 app-portage/genlop
 app-portage/gentoolkit
 app-shells/bash
+app-text/gv
 app-text/po4a
 app-text/tree
+dev-lang/go
 dev-libs/jsoncpp
 dev-perl/TermReadKey
 dev-perl/Text-CharWidth
@@ -29,8 +30,8 @@ dev-python/autopep8
 dev-python/pep8
 dev-python/pip
 dev-qt/qt-creator
-dev-util/android-sdk-update-manager
 dev-util/android-tools
+dev-util/colorgcc
 dev-util/dejagnu
 dev-util/nemiver
 dev-util/scons
@@ -48,10 +49,10 @@ media-gfx/evoluspencil
 media-gfx/gimp
 media-gfx/gnome-screenshot
 media-video/snappy
+net-analyzer/nethogs
 net-im/bitlbee
 net-misc/bridge-utils
 net-misc/dhcpcd
-net-misc/grive
 net-misc/ntp
 sys-apps/bleachbit
 sys-apps/dstat
@@ -79,6 +80,7 @@ virtual/jre
 virtual/tex-base
 www-client/firefox
 www-plugins/adobe-flash
+x11-libs/libXScrnSaver
 x11-libs/vte
 x11-misc/wmctrl
 x11-terms/gnome-terminal

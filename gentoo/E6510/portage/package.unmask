@@ -1,4 +1,0 @@
-# required by cross-x86_64-pc-linux-musl/musl (argument)
-# /etc/portage/package.mask/cross-x86_64-pc-linux-musl:
-=cross-x86_64-pc-linux-musl/musl-9999
-

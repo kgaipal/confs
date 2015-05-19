@@ -1,9 +1,9 @@
 # Qt libs specific
 dev-qt/* pch webkit postgres icu gtkstyle
-dev-qt/qthelp doc
 
 # Qt based projects
 dev-qt/qt-creator subversion valgrind doc
+dev-qt/qthelp doc
 
 # required by dev-qt/qt-creator-2.8.1
 # required by @selected
