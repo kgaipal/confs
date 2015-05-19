@@ -19,7 +19,7 @@ fi
 
 echo -n "Creating tag file: '$TAGFILE'... "
 
-find $TARGET_DIR -readable -type f \( -name *.c* -o -name *.h \) -print \
+find $TARGET_DIR -readable -type f \( -name "*.c*" -o -name "*.h" \) -print \
     | etags --append --declarations --ignore-indentation --members --language=c --language=c++ -
 
 echo "done."
