@@ -2,14 +2,17 @@
 # A short program to open files directly from copy-paste from grep output in emacsclient.
 
 if [ $# -lt 1 ]; then
-    echo -e "Opens a file in emacs at a give line number (if any).\n\tUsage: em filename[:linenum[:anygarbagevalue]]"
+    echo "Opens a file in emacs at a give line number (if any)."
+    echo -e "Usage: \n\t$(basename $0) FILENAME[:LINENUM[:anygarbagevalue]]"
+    echo
     exit 1
 fi
 
 filename=$(echo $1 | cut -f1 -d ':')
-linenum=$(echo $1 | cut -f2 -d ':')
+linenum=$(echo $1 | cut -f2 -d ':' -s)
+shift 1
 
-echo -n "em: Opening '$filename' at line number $linenum... "
+echo -n "Opening '$filename' at line #$linenum... "
 
 if [ -z $filename ]; then
     echo -e "Failed!\n** Filename cannot be extracted from given arguments"
@@ -17,9 +20,9 @@ if [ -z $filename ]; then
 fi
 
 if ! [[ $linenum =~ ^[0-9]+$ ]] ; then
-    echo -n "(cannot parse line number)... "
+    echo -n "(cannot parse line #, defaulting 0) "
     linenum=0
 fi
 
 emacsclient -n +$linenum $filename
-echo "done!"
+echo "done."
