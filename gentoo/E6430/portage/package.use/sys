@@ -1,0 +1,3 @@
+sys-devel/gcc -fortran mudflap graphite
+sys-apps/gnome-disk-utility fat
+sys-block/gparted fat ntfs
