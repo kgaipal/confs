@@ -1,6 +1,6 @@
 #
 # Necessary packages and their flags I need
-gnome-base/gnome-shell networkmanager
+#
 
 # Others to satisfy portage @world, will remove later ... may be?
 #

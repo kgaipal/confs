@@ -1,14 +1,10 @@
-app-admin/localepurge
 app-admin/sudo
-app-admin/syslog-ng
 app-editors/emacs
 app-editors/nano
-app-portage/cpuinfo2cpuflags
 app-portage/eix
 app-portage/genlop
 app-portage/gentoolkit
 app-text/tree
-dev-util/android-tools
 dev-vcs/git
 dev-vcs/subversion
 gnome-base/gdm
@@ -16,11 +12,10 @@ gnome-extra/gnome-tweak-tool
 media-gfx/eog
 media-video/totem
 net-misc/dhcpcd
-sys-apps/gnome-disk-utility
 sys-apps/mlocate
 sys-apps/pciutils
-sys-block/gparted
 sys-boot/lilo
+sys-firmware/b43-firmware
 sys-kernel/genkernel-next
 sys-kernel/gentoo-sources
 sys-kernel/linux-firmware
