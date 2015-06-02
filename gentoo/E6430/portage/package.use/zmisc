@@ -1,6 +1,8 @@
 #
 # Necessary packages and their flags I need
 #
+media-gfx/gimp smp
+
 
 # Others to satisfy portage @world, will remove later ... may be?
 #

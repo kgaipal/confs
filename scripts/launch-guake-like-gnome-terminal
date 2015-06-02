@@ -2,7 +2,7 @@
 
 set -x
 
-APP="emacs@jxnplws02696"
+APP="emacs@$(uname -n)"
 FILE="/tmp/guake_like-"$APP
 HIDE=
 
