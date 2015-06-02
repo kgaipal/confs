@@ -1,0 +1,9 @@
+[user]
+	name = Kshitij Gaipal
+	email = kgaipal@gmail.com
+[push]
+	default = matching
+[credential]
+	helper = store
+[core]
+	editor = emacsclient
