@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# colors
+NORMAL="\[\033[00m\]"
+  BOLD="\[\033[01m\]"
+   RED="\[\033[31m\]"
+ GREEN="\[\033[32m\]"
+  GREY="\[\033[37m\]"
+
+PATH=$PATH:/home/kgaipal/.local/bin
+
+# alias definitions
+if [ -f ~/.bash_aliases ]; then
+	. ~/.bash_aliases
+fi
+
+# change prompt
+PS1="[$GREY\W$NORMAL]\$ "
+
+# open new gnome-terminal in same working directory as in previous terminal
+. /etc/profile.d/vte.sh
