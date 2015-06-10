@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [ $# -lt 1 ]; then
+	echo "Usage: $(basename $0) PATTERN"
+	exit 1
+fi
+
+exec grep -nHsI --color=always \
+     --exclude="*.*pro[j]" \
+     --exclude="*.[p]o" \
+     --exclude="*.scons" \
+     --exclude="*.sln" \
+     --exclude="*ChangeLog*" \
+     --exclude="Makefile" \
+     --exclude="SConstruct" \
+     --exclude="TAGS" \
+     --exclude="config*" \
+     --exclude-dir=".svn" \
+     --exclude-dir=".output" \
+     "$@" \
+    | sed -r 's/[\t]+//'
