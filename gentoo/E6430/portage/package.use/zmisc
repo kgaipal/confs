@@ -2,7 +2,8 @@
 # Necessary packages and their flags I need
 #
 media-gfx/gimp smp
-
+dev-util/cscope emacs
+net-p2p/transmission -qt4
 
 # Others to satisfy portage @world, will remove later ... may be?
 #
