@@ -6,4 +6,5 @@
 [credential]
 	helper = store
 [core]
-	editor = emacsclient
+	#editor = emacsclient
+	editor = nano
