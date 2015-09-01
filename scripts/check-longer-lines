@@ -1,2 +1,2 @@
 #!/bin/bash
-exec bomgrep -r '.\{92\}' "$@"
+exec grepk -r '.\{92\}' "$@"
