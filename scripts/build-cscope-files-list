@@ -1,9 +1,12 @@
 #!/bin/bash
+
+CSCOPE_FILE=cscope.files
+
 function usage
 {
     echo "Usage:"
     echo -e "\t$ ./$(basename $0) PATH"
-    echo -e "\n\tBuilds a files list for cscope program in PATH/cscope.files"
+    echo -e "\n\tBuilds a files list for cscope program in PATH/$CSCOPE_FILE"
 }
 
 function validate
@@ -23,6 +26,7 @@ function validate
 
 function generate_cscope
 {
+    
     echo -n "building cscope files in $CSCOPE_PATH... "
     pushd $CSCOPE_PATH > /dev/null
 
@@ -34,10 +38,10 @@ function generate_cscope
 	     -o -name *.c \
 	     -o -name *.h \
 	 \) -print \
-	 > ./cscope.files
+	 > $CSCOPE_FILE
 
     # remove some unwanted folders
-    sed -ie '/[Tt]est[[:alnum:]_\-]*/d'  ./cscope.files
+    sed -i '/[Tt]est[[:alnum:]_\-]*/d' $CSCOPE_FILE
 
     popd > /dev/null
 
