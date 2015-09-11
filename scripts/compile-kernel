@@ -1,0 +1,49 @@
+#! /bin/sh
+
+function usage
+{
+    echo "kernel config path missing"
+    echo "Usage:"
+    echo -e "\t$ ./$(basename "$0") PATH"
+}
+
+function validate
+{
+    if [ "$1" == "--help" ]; then
+	return 1
+    fi
+
+    if [ $# -lt 1 ]; then
+	return 1
+    fi
+
+    # all ok
+    KERNEL_CONFIG=$1
+    return 0
+}
+
+function compile_kernel_and_install
+{
+    pushd "$PWD"
+    cd /usr/src/linux
+
+    /usr/bin/genkernel --makeopts=-j8 --kernel-config=$KERNEL_CONFIG --splash=fade-in all \
+    && /usr/sbin/grub2-install /dev/sda \
+    && /usr/sbin/grub2-mkconfig -o /boot/grub/grub.cfg
+
+    popd
+
+# make -s -j8 1>/tmp/kernel.log \
+#  && make modules_install \
+#  && genkernel --install initramfs \
+#  && cp -v ./arch/x86_64/boot/bzImage /boot/kernel-$(uname -r) \
+#  && /sbin/lilo
+}
+
+validate $*
+if [ $? -ne 0 ]; then
+    usage
+    exit 1
+fi
+
+compile_kernel_and_install
