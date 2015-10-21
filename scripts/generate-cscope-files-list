@@ -37,7 +37,7 @@ function generate_cscope
 		-name *.cpp \
 	     -o -name *.c \
 	     -o -name *.h \
-	 \) -print \
+	 \) -printf "\"%p\"\n" \
 	 > $CSCOPE_FILE
 
     # remove some unwanted folders
