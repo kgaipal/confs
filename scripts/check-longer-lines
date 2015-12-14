@@ -1,2 +1,2 @@
 #!/bin/bash
-exec grepk -r '.\{92\}' "$@"
+exec grepk -r '.\{94\}' "$@"
