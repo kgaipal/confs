@@ -11,7 +11,7 @@ function usage
 function validate
 {
     if [ "$1" == "--help" ]; then
-        return 1
+	return 1
     fi
 
     # all ok
@@ -27,6 +27,7 @@ function backup
     # etc
     cp -arp /etc/fstab ${BACKUP_DIR}/etc/
     cp -arp /etc/default/grub ${BACKUP_DIR}/etc/
+    cp -arp /etc/systemd/journald.conf ${BACKUP_DIR}/etc/
 
     # portage
     cp -arp /etc/portage/package.* ${BACKUP_DIR}portage/
