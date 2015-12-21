@@ -25,8 +25,9 @@ function backup
     mkdir -p $BACKUP_DIR/{portage,kernel,etc}
 
     # etc
-    cp -arp /etc/fstab ${BACKUP_DIR}/etc/
     cp -arp /etc/default/grub ${BACKUP_DIR}/etc/
+    cp -arp /etc/fstab ${BACKUP_DIR}/etc/
+    cp -arp /etc/inputrc ${BACKUP_DIR}/etc/
     cp -arp /etc/systemd/journald.conf ${BACKUP_DIR}/etc/
 
     # portage
