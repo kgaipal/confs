@@ -1,5 +1,7 @@
 #! /bin/sh
 
+. $(dirname $0)/util.inc
+
 function usage
 {
     echo "kernel config path missing"
@@ -27,7 +29,7 @@ function compile_kernel_and_install
     pushd "$PWD"
     cd /usr/src/linux
 
-    /usr/bin/genkernel --makeopts=-j8 --kernel-config=$KERNEL_CONFIG --splash=fade-in all \
+    /usr/bin/genkernel --makeopts=-j$AVAILABLE_CPUS --kernel-config=$KERNEL_CONFIG all \
     && /usr/sbin/grub2-install /dev/sda \
     && /usr/sbin/grub2-mkconfig -o /boot/grub/grub.cfg
 
