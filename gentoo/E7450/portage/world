@@ -22,6 +22,7 @@ dev-lang/go
 dev-libs/jsoncpp
 dev-python/autopep8
 dev-python/pip
+dev-qt/qt-creator
 dev-util/colorgcc
 dev-util/cscope
 dev-util/dejagnu
@@ -67,6 +68,7 @@ sys-kernel/genkernel-next
 sys-kernel/gentoo-sources
 sys-process/lsof
 sys-process/schedtool
+virtual/texi2dvi
 www-client/firefox
 www-plugins/adobe-flash
 x11-libs/libXScrnSaver
