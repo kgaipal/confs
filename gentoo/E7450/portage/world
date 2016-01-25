@@ -42,6 +42,7 @@ media-gfx/eog
 media-gfx/evoluspencil
 media-gfx/gimp
 media-gfx/gnome-screenshot
+media-video/cheese
 net-analyzer/iftop
 net-analyzer/nethogs
 net-analyzer/nmap
@@ -66,11 +67,13 @@ sys-devel/crossdev
 sys-devel/gdb
 sys-kernel/genkernel-next
 sys-kernel/gentoo-sources
+sys-process/htop
 sys-process/lsof
 sys-process/schedtool
 virtual/texi2dvi
 www-client/firefox
 www-plugins/adobe-flash
+www-servers/tornado
 x11-libs/libXScrnSaver
 x11-libs/vte
 x11-misc/alacarte
