@@ -2,3 +2,7 @@ sys-apps/gnome-disk-utility fat
 sys-block/gparted fat hfs ntfs
 >=sys-devel/gcc-4.8 mudflap -fortran graphite
 sys-devel/llvm clang gold
+
+# valgrind needs debug info from glibc otherwise will fault on strlen() indirection errors
+# also make sure FEATURES="-nostrip" is present so symbols are not stripped out
+sys-libs/glibc debug

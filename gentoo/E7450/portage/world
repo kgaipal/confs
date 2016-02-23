@@ -37,6 +37,7 @@ dev-vcs/mercurial
 dev-vcs/subversion
 gnome-base/dconf-editor
 gnome-extra/gnome-tweak-tool
+mail-client/geary
 media-fonts/lohit-fonts
 media-gfx/eog
 media-gfx/evoluspencil
