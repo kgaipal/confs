@@ -1,6 +1,6 @@
-www-client/firefox system-icu system-cairo system-jpeg system-libvpx wifi
+www-client/firefox system-icu system-cairo system-jpeg system-libvpx gtk3
 
-# required by www-client/firefox-31.7.0::gentoo[gstreamer]
-# required by firefox (argument)
->=media-plugins/gst-plugins-meta-1.0-r2 ffmpeg
-
+# required by www-client/firefox-38.0.5::gentoo[system-libvpx]
+# required by @selected
+# required by @world (argument)
+>=media-libs/libvpx-1.4.0 postproc

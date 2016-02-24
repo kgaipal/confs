@@ -5,3 +5,6 @@
 
 # required by adobe-flash (argument)
 >=www-plugins/adobe-flash-11.2.202.460 AdobeFlash-11.x
+
+# required by www-plugins/google-talkplugin (argument)
+>=www-plugins/google-talkplugin-5.4.2.0 Google-TOS
