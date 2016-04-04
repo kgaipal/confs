@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Launches emacsclient as the default editor for git. .gitconfig must have
+# core.editor set to em-git
+
+if [ $# -lt 1 ]; then
+    echo "Opens a file in emacs through emacsclient for git commit."
+    echo -e "Usage: \n\t$(basename $0) FILENAME"
+    echo
+    exit 1
+fi
+
+FILENAME=$1
+shift 1
+
+emacsclient -c $FILENAME
+echo "done"

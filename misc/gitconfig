@@ -7,4 +7,4 @@
 	helper = store
 [core]
 	# launches a new emacs window for commit messages
-	editor = emacs
+	editor = em-git
