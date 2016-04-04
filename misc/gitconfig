@@ -6,5 +6,5 @@
 [credential]
 	helper = store
 [core]
-	#editor = emacsclient
-	editor = nano
+	# launches a new emacs window for commit messages
+	editor = emacs
