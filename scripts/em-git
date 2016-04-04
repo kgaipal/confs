@@ -13,5 +13,5 @@ fi
 FILENAME=$1
 shift 1
 
-emacsclient -c $FILENAME
+emacsclient $FILENAME
 echo "done"
