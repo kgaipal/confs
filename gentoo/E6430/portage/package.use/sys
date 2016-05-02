@@ -1,3 +1,8 @@
-sys-devel/gcc -fortran mudflap graphite
-sys-apps/gnome-disk-utility fat
+# USE="graphite" for more optimizations
+# USE="-fortran" diables obsolete or uneeded language support 
+sys-devel/gcc -fortran graphite
+
+# various filesystems support which will be used most often
 sys-block/gparted fat hfs ntfs
+sys-apps/gnome-disk-utility fat
+
