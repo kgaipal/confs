@@ -8,3 +8,5 @@
 [core]
 	# launches a new emacs window for commit messages
 	editor = em-git
+[alias]
+	st = status
