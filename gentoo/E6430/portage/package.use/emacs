@@ -1,2 +1,2 @@
-app-editors/emacs gconf gsettings sound xft gzip-el libxml2 gnutls
+app-editors/emacs gconf gsettings sound xft gzip-el libxml2
 dev-util/cscope emacs

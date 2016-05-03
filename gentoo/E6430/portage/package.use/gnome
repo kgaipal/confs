@@ -1,0 +1,15 @@
+# required by gnome-base/gnome-shell-3.18.3::gentoo
+# required by gnome-extra/gnome-tweak-tool-3.18.1-r1::gentoo
+# required by @selected
+# required by @world (argument)
+=gnome-base/gnome-control-center-3.18.2 networkmanager
+
+# required by gnome-extra/gnome-boxes-3.18.1::gentoo
+# required by gnome-boxes (argument)
+=app-emulation/qemu-2.5.1 spice
+
+# USE="usbredir" needed for USB devices in VMs
+=gnome-extra/gnome-boxes-3.18.1 usbredir
+=net-misc/spice-gtk-0.30-r1 usbredir
+=app-emulation/qemu-2.5.1 usbredir
+

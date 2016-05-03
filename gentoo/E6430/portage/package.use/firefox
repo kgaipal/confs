@@ -1,6 +1,4 @@
-www-client/firefox system-icu system-cairo system-jpeg system-libvpx gtk3
 
-# required by www-client/firefox-38.0.5::gentoo[system-libvpx]
-# required by @selected
-# required by @world (argument)
->=media-libs/libvpx-1.4.0 postproc
+# USE="system-*" to prefer system defined libs over firefox's
+www-client/firefox system-icu system-jpeg system-libvpx gtk3
+
