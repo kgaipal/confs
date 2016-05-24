@@ -1,4 +1,5 @@
 #!/bin/sh
+
 alias ls='ls --color=always'
 alias grep='grep --color=always'
 alias fgrep='fgrep --color=always'
@@ -13,4 +14,4 @@ alias rm='rm -i'
 
 # Create an alias file for eshell
 # http://www.emacswiki.org/emacs/EshellAlias
-alias | sed -E "s/^alias ([^=]+)='(.*)'$/alias \1 \2 \$*/g; s/'\\\''/'/g;" > ~/.eshell/alias
+alias | sed -E "s/^alias ([^=]+)='(.*)'$/alias \1 \2 \$*/g; s/'\\\''/'/g;" > $HOME/.eshell/alias

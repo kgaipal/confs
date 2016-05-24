@@ -7,11 +7,11 @@ NORMAL="\[\033[00m\]"
  GREEN="\[\033[32m\]"
   GREY="\[\033[37m\]"
 
-PATH=$PATH:/home/kgaipal/.local/bin
+PATH=$PATH:$HOME/.local/bin
 
 # alias definitions
-if [ -f ~/.bash_aliases ]; then
-	. ~/.bash_aliases
+if [ -f $HOME/.bash_aliases ]; then
+	. $HOME/.bash_aliases
 fi
 
 # change prompt
