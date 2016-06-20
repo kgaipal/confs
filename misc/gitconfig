@@ -11,5 +11,7 @@
 [core]
 	# launches a new emacs window for commit messages
 	editor = emacsclient
+	autocrlf = input
+	excludesfile = C:/Users/ksgaipal/.gitignore_global
 [alias]
 	st = status
