@@ -1,12 +1,15 @@
 [user]
 	name = Kshitij Gaipal
-	email = kgaipal@gmail.com
+[core]
+	editor = emacsclient
+	autocrlf = input
+	excludesfile = C:/Users/ksgaipal/.gitignore_global
 [push]
 	default = matching
 [credential]
 	helper = store
 [core]
 	# launches a new emacs window for commit messages
-	editor = em-git
+	editor = emacsclient
 [alias]
 	st = status
