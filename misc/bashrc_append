@@ -11,11 +11,13 @@ PATH=$PATH:$HOME/.local/bin
 
 # alias definitions
 if [ -f $HOME/.bash_aliases ]; then
-	. $HOME/.bash_aliases
+    . $HOME/.bash_aliases
 fi
 
 # change prompt
 PS1="[$GREY\W$NORMAL]\$ "
 
 # open new gnome-terminal in same working directory as in previous terminal
-. /etc/profile.d/vte.sh
+if [ -f /etc/profile.d/vte.sh ]; then
+    . /etc/profile.d/vte.sh
+fi
