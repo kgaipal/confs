@@ -19,8 +19,9 @@ exec grep -nHsI --color=always \
      --exclude-dir=".output" \
      --exclude=*.map \
      --exclude=*.log \
+     --exclude=templates.html.js \
      --exclude-dir=node_modules \
      --exclude-dir=Release \
      "$@" \
-    | sed -r 's/[\t]+//' \
-    | grep -vE "Chutzpah|dist/js"
+    | sed -r 's/[[:space:]]+//' \
+    | grep -vE "Chutzpah|/dist/|/wwwroot/lib/"
