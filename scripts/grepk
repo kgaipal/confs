@@ -19,6 +19,7 @@ exec grep -nHsI --color=always \
      --exclude-dir=".output" \
      --exclude=*.map \
      --exclude=*.log \
+     --exclude=*.css \
      --exclude=templates.html.js \
      --exclude-dir=node_modules \
      --exclude-dir=Release \
