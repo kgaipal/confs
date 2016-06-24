@@ -1,3 +1,6 @@
+# run as:
+# powershell -ExecutionPolicy ByPass -File ./windows10-remove-default-pacakges.ps1
+
 Get-AppxPackage *3dbuilder* | Remove-AppxPackage
 Get-AppxPackage *windowsalarms* | Remove-AppxPackage
 Get-AppxPackage *windowscommunicationsapps* | Remove-AppxPackage
