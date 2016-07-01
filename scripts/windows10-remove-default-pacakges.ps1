@@ -1,22 +1,40 @@
 # run as:
 # powershell -ExecutionPolicy ByPass -File ./windows10-remove-default-pacakges.ps1
 
-Get-AppxPackage *3dbuilder* | Remove-AppxPackage
-Get-AppxPackage *windowsalarms* | Remove-AppxPackage
-Get-AppxPackage *windowscommunicationsapps* | Remove-AppxPackage
-Get-AppxPackage *windowscamera* | Remove-AppxPackage
-Get-AppxPackage *zunemusic* | Remove-AppxPackage
-Get-AppxPackage *windowsmaps* | Remove-AppxPackage
-Get-AppxPackage *zunevideo* | Remove-AppxPackage
-Get-AppxPackage *onenote* | Remove-AppxPackage
-Get-AppxPackage *people* | Remove-AppxPackage
-Get-AppxPackage *photos* | Remove-AppxPackage
-# Get-AppxPackage *windowsstore* | Remove-AppxPackage
-Get-AppxPackage *soundrecorder* | Remove-AppxPackage
-Get-AppxPackage *xboxapp* | Remove-AppxPackage
-Get-AppxPackage *candycrush* | Remove-AppxPackage
-Get-AppxPackage *bingnews*| Remove-AppxPackage
-Get-AppxPackage *bingfinance*| Remove-AppxPackage
-Get-AppxPackage *solitaire*| Remove-AppxPackage
-Get-AppxPackage *twitter*| Remove-AppxPackage
-Get-AppxPackage *officehub*| Remove-AppxPackage
+# From:
+# http://answers.microsoft.com/en-us/windows/forum/windows_10-windows_store/windows-10-removing-provisioned-apps/ad5105ee-bd5c-46ed-a6a7-57e3ccb419b9?auth=1
+# $apps     = @("*messaging*", "*sway*", "*commsphone*", "*windowsphone*",
+# "*xbox*", "*Zune*", "*OneNote*", "*Weather*", "*insider*",
+# "*bingfinance*", "*bingnews*", "*bingsports*", "*bingweather*",
+# "*solitaire*", "*officehub*", "*skypeapp*", "*getstarted*",
+# "*3dbuilder*", "*flipboard*", "*fresh*", "*drawboard*", "*newyork*",
+# "*twitter*", "*CandyCrushSodaSaga*", "*people*", "*bing*")
+
+$apps = @(
+    "*3dbuilder*",
+    "*CandyCrush*",
+    "*bingfinance*",
+    "*bingnews*",
+    "*bingsports*",
+    "*flipboard*",
+    "*getstarted*",
+    "*officehub*"
+    "*onenote*",
+    "*people*",
+    "*photos*",
+    "*skypeapp*",
+    "*solitaire*",
+    "*soundrecorder*",
+    "*twitter*",
+    "*windowsalarms*",
+    "*windowscamera*",
+    "*windowscommunicationsapps*",
+    "*windowsmaps*",
+    "*xboxapp*",
+    "*zunemusic*",
+)
+
+# Remove the Apps we want to remove
+foreach ($app in $apps) {
+    Get-AppxPackage -allusers $app | Remove-AppxPackage
+}
