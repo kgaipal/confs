@@ -14,3 +14,9 @@ Get-AppxPackage *photos* | Remove-AppxPackage
 # Get-AppxPackage *windowsstore* | Remove-AppxPackage
 Get-AppxPackage *soundrecorder* | Remove-AppxPackage
 Get-AppxPackage *xboxapp* | Remove-AppxPackage
+Get-AppxPackage *candycrush* | Remove-AppxPackage
+Get-AppxPackage *bingnews*| Remove-AppxPackage
+Get-AppxPackage *bingfinance*| Remove-AppxPackage
+Get-AppxPackage *solitaire*| Remove-AppxPackage
+Get-AppxPackage *twitter*| Remove-AppxPackage
+Get-AppxPackage *officehub*| Remove-AppxPackage
