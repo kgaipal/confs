@@ -32,6 +32,8 @@ $apps = @(
     "*windowsmaps*",
     "*xboxapp*",
     "*zunemusic*",
+
+    "NEVERMATCH"
 )
 
 # Remove the Apps we want to remove
