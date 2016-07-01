@@ -20,6 +20,7 @@ exec grep -nHsI --color=always \
      --exclude=*.map \
      --exclude=*.log \
      --exclude=*.css \
+     --exclude=jsll.js \
      --exclude=templates.html.js \
      --exclude-dir=node_modules \
      --exclude-dir=Release \
