@@ -11,6 +11,6 @@ Get-AppxPackage *zunevideo* | Remove-AppxPackage
 Get-AppxPackage *onenote* | Remove-AppxPackage
 Get-AppxPackage *people* | Remove-AppxPackage
 Get-AppxPackage *photos* | Remove-AppxPackage
-Get-AppxPackage *windowsstore* | Remove-AppxPackage
+# Get-AppxPackage *windowsstore* | Remove-AppxPackage
 Get-AppxPackage *soundrecorder* | Remove-AppxPackage
 Get-AppxPackage *xboxapp* | Remove-AppxPackage
