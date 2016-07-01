@@ -38,5 +38,5 @@ $apps = @(
 
 # Remove the Apps we want to remove
 foreach ($app in $apps) {
-    Get-AppxPackage -allusers $app | Remove-AppxPackage
+    Get-AppxPackage $app | Remove-AppxPackage
 }
