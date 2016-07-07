@@ -3,15 +3,8 @@
 [core]
 	editor = emacsclient
 	autocrlf = input
-	excludesfile = C:/Users/ksgaipal/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [push]
 	default = matching
-[credential]
-	helper = store
-[core]
-	# launches a new emacs window for commit messages
-	editor = emacsclient
-	autocrlf = input
-	excludesfile = ~/.gitignore_global
 [alias]
 	st = status
