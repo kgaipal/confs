@@ -4,7 +4,5 @@
 	editor = emacsclient
 	autocrlf = input
 	excludesfile = ~/.gitignore_global
-[push]
-	default = matching
 [alias]
 	st = status
