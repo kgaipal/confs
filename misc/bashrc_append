@@ -7,7 +7,16 @@ NORMAL="\[\033[00m\]"
  GREEN="\[\033[32m\]"
   GREY="\[\033[37m\]"
 
-PATH=$PATH:$HOME/.local/bin
+# use platform dependent separators
+PLATFORM=$(cat /proc/version | cut -d ' ' -f1)
+
+if [[ "$PLATFORM" =~ ^MINGW* ]]; then
+    SEP=":"
+else
+    SEP=";"
+fi
+
+PATH=${PATH}${SEP}${HOME}/.local/bin
 
 # alias definitions
 if [ -f $HOME/.bash_aliases ]; then
