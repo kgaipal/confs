@@ -1,29 +1,33 @@
 #!/bin/bash
 
+# Most of exclude command are from .gitignore, please check if git grep can be invoked to do grepping for us instead?
+
 if [ $# -lt 1 ]; then
         echo "Usage: $(basename $0) PATTERN"
         exit 1
 fi
 
 exec grep -nHsI --color=always \
+     --exclude-dir=".output" \
+     --exclude-dir=".svn" \
+     --exclude-dir=Debug \
+     --exclude-dir=Release \
+     --exclude-dir=dist \
+     --exclude-dir=node_modules \
      --exclude="*.*pro[j]" \
      --exclude="*.[p]o" \
-     --exclude="*.scons" \
-     --exclude="*.sln" \
-     --exclude="*ChangeLog*" \
-     --exclude="Makefile" \
-     --exclude="SConstruct" \
-     --exclude="TAGS" \
-     --exclude="config*" \
-     --exclude-dir=".svn" \
-     --exclude-dir=".output" \
-     --exclude=*.map \
+     --exclude="_Chutzpah*.test.html" \
      --exclude=*.log \
-     --exclude=*.css \
+     --exclude=*.map \
+     --exclude=*.min.js \
+     --exclude=*.scons \
+     --exclude=*.sln \
+     --exclude=*ChangeLog* \
+     --exclude=Makefile \
+     --exclude=SConstruct \
+     --exclude=TAGS \
      --exclude=jsll.js \
      --exclude=templates.html.js \
-     --exclude-dir=node_modules \
-     --exclude-dir=Release \
      "$@" \
     | sed -r 's/[[:space:]]+//' \
-    | grep -vE "Chutzpah|/dist/|/wwwroot/lib/"
+    | grep -vE "/wwwroot/lib/"
