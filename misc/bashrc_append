@@ -11,9 +11,9 @@ NORMAL="\[\033[00m\]"
 PLATFORM=$(cat /proc/version | cut -d ' ' -f1)
 
 if [[ "$PLATFORM" =~ ^MINGW* ]]; then
-    SEP=":"
+    SEP=";"                     # windows
 else
-    SEP=";"
+    SEP=":"
 fi
 
 PATH=${PATH}${SEP}${HOME}/.local/bin
