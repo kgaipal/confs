@@ -8,15 +8,14 @@ if [ $# -lt 1 ]; then
 fi
 
 exec grep -nHsI --color=always \
-     --exclude-dir=".output" \
-     --exclude-dir=".svn" \
+     --exclude-dir=.output \
+     --exclude-dir=.svn \
      --exclude-dir=Debug \
      --exclude-dir=Release \
      --exclude-dir=dist \
      --exclude-dir=node_modules \
-     --exclude="*.*pro[j]" \
-     --exclude="*.[p]o" \
-     --exclude="_Chutzpah*.test.html" \
+     --exclude=*.[a-z]*pro[j] \
+     --exclude=*.[p]o \
      --exclude=*.log \
      --exclude=*.map \
      --exclude=*.min.js \
@@ -26,6 +25,7 @@ exec grep -nHsI --color=always \
      --exclude=Makefile \
      --exclude=SConstruct \
      --exclude=TAGS \
+     --exclude=_Chutzpah*.test.html \
      --exclude=jsll.js \
      --exclude=templates.html.js \
      "$@" \
