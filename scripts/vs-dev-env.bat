@@ -7,5 +7,5 @@ rem current shell.
 
 ECHO OFF
 CHDIR "%HOME%/code/"
-set PROMPT=[$P]$_$G 
+set PROMPT=[$P]$_$$ 
 %comspec% /k "C:/"Program Files (x86)"/"Microsoft Visual Studio 14.0"/Common7/Tools/VsDevCmd.bat"
