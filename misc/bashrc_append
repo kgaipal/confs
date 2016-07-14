@@ -18,11 +18,6 @@ fi
 
 PATH=${PATH}${SEP}${HOME}/.local/bin
 
-# alias definitions
-if [ -f $HOME/.bash_aliases ]; then
-    . $HOME/.bash_aliases
-fi
-
 # change prompt
 PS1="[$GREY\W$NORMAL]\$ "
 
