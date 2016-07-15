@@ -4,7 +4,15 @@
 	editor = emacsclient
 	autocrlf = input
 	excludesfile = ~/.gitignore_global
+	whitespace = trailing-space
 [alias]
 	st = status
 [push]
 	default = simple
+[color]
+	branch = always
+	grep = always
+[grep]
+	lineNumber = true
+[log]
+	follow = true
