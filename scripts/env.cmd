@@ -16,7 +16,7 @@
 set PATH="%USERPROFILE%\.local\bin\";"%USERPROFILE%\code\git-sdk-64\usr\bin";%PATH%
 
 :: Set prompt
-set PROMPT=[$P]$_$$
+set PROMPT=[$P]$_$$ 
 
 :: Commands
 DOSKEY b=CHDIR ../
