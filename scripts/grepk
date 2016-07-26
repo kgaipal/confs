@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# Most of exclude command are from .gitignore, please check if git grep can be invoked to do grepping for us instead?
+# Most of exclude command are from .gitignore, please check if git grep can be invoked to
+# do grepping for us instead?
 
 if [ $# -lt 1 ]; then
         echo "Usage: $(basename $0) PATTERN"
@@ -8,26 +9,14 @@ if [ $# -lt 1 ]; then
 fi
 
 exec grep -nHsI --color=always \
+     --exclude-from="$HOME/code/grep-exclude-patterns.txt" \
      --exclude-dir=.output \
      --exclude-dir=.svn \
+     --exclude-dir=.git \
      --exclude-dir=Debug \
      --exclude-dir=Release \
      --exclude-dir=dist \
      --exclude-dir=node_modules \
-     --exclude=*.[a-z]*pro[j] \
-     --exclude=*.[p]o \
-     --exclude=*.log \
-     --exclude=*.map \
-     --exclude=*.min.js \
-     --exclude=*.scons \
-     --exclude=*.sln \
-     --exclude=*ChangeLog* \
-     --exclude=Makefile \
-     --exclude=SConstruct \
-     --exclude=TAGS \
-     --exclude=_Chutzpah*.test.html \
-     --exclude=jsll.js \
-     --exclude=templates.html.js \
      "$@" \
-    | sed -r 's/[[:space:]]+//' \
+    | sed -r 's/[[:space:]]+/ /' \
     | grep -vE "/wwwroot/lib/"
