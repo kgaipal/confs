@@ -14,4 +14,4 @@ fi
 # exec find $PWD \( \( -path $EXCLUDED_PATHS \) -prune \) -o \
 #      "$@"
 
-exec find "$@"
+exec find "$@" | ~/.local/bin/grepk --color=never -vE "/dist|/node_modules"
