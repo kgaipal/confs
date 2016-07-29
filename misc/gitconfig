@@ -16,3 +16,6 @@
 	lineNumber = true
 [log]
 	follow = true
+[credential]
+	helper = store
+
