@@ -17,6 +17,6 @@ exec grep -nHsI --color=always \
      --exclude-dir=Release \
      --exclude-dir=dist \
      --exclude-dir=node_modules \
-     "$@" \
+     "$@" . \
     | sed -r 's/[[:space:]]+/ /' \
     | grep -vE "/wwwroot/lib/"
