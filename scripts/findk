@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Most of exclude command are from .gitignore, please check if git grep can be invoked to
+# do grepping for us instead?
+
+if [ $# -lt 1 ]; then
+        echo "Usage: $(basename $0) PATTERN"
+        exit 1
+fi
+
+# $HOME/code/find-exclude-paths.txt
+# while read 
+# EXCLUDED_PATHS=
+# exec find $PWD \( \( -path $EXCLUDED_PATHS \) -prune \) -o \
+#      "$@"
+
+exec find "$@"
