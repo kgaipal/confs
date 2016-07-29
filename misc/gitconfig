@@ -12,6 +12,7 @@
 [color]
 	branch = always
 	grep = always
+	status = always
 [grep]
 	lineNumber = true
 [log]
