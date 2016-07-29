@@ -13,11 +13,10 @@
 $apps = @(
     "*3dbuilder*",
     "*CandyCrush*",
-    "*bingfinance*",
-    "*bingnews*",
-    "*bingsports*",
+    "*bing*",
     "*flipboard*",
     "*getstarted*",
+    "*messaging*",
     "*officehub*"
     "*onenote*",
     "*people*",
@@ -30,8 +29,8 @@ $apps = @(
     "*windowscamera*",
     "*windowscommunicationsapps*",
     "*windowsmaps*",
-    "*xboxapp*",
-    "*zunemusic*",
+    "*xbox*",
+    "*zune*",
 
     "NEVERMATCH"
 )
