@@ -1,17 +1,21 @@
 #!/bin/bash
 
-# Most of exclude command are from .gitignore, please check if git grep can be invoked to
-# do grepping for us instead?
+# wrapper script for find program
 
 if [ $# -lt 1 ]; then
         echo "Usage: $(basename $0) PATTERN"
         exit 1
 fi
 
-# $HOME/code/find-exclude-paths.txt
-# while read 
-# EXCLUDED_PATHS=
-# exec find $PWD \( \( -path $EXCLUDED_PATHS \) -prune \) -o \
-#      "$@"
+. $(dirname $0)/util.inc
 
-exec find "$@" | ~/.local/bin/grepk --color=never -vE "/dist|/node_modules"
+PATTERN_EXCLUDE_FILE=$HOME/code/find-exclude-patterns.txt
+EXCLUDED_FILE_ARGS=$(parse_folder_names \
+                         "-path ./" \
+                         $PATTERN_EXCLUDE_FILE \
+                         " -o")
+
+# appending dummy "-name ''" for last pattern string to work correctly
+exec find . \
+     \( $EXCLUDED_FILE_ARGS -name '' \) -prune -o \
+     "$@"

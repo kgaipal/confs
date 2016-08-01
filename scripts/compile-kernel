@@ -12,11 +12,11 @@ function usage
 function validate
 {
     if [ "$1" == "--help" ]; then
-	return 1
+        return 1
     fi
 
     if [ $# -lt 1 ]; then
-	return 1
+        return 1
     fi
 
     # all ok
@@ -29,7 +29,9 @@ function compile_kernel_and_install
     pushd "$PWD"
     cd /usr/src/linux
 
-    /usr/bin/genkernel --makeopts=-j$AVAILABLE_CPUS --kernel-config=$KERNEL_CONFIG all \
+    /usr/bin/genkernel \
+        --makeopts=-j$AVAILABLE_CPUS \
+        --kernel-config=$KERNEL_CONFIG all \
     && /usr/sbin/grub2-install /dev/sda \
     && /usr/sbin/grub2-mkconfig -o /boot/grub/grub.cfg
 

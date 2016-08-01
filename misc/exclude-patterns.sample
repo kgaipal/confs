@@ -1,3 +1,6 @@
+# lines marked with '#' are comments
+
+# files
 *.csproj
 *.css
 *.log
@@ -17,6 +20,8 @@ _Chutzpah*
 app.d.ts
 jsll.js
 templates.html.js
+
+# directories
 .output/
 .svn/
 .git/
