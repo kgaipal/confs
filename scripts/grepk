@@ -1,22 +1,24 @@
 #!/bin/bash
 
-# Most of exclude command are from .gitignore, please check if git grep can be invoked to
-# do grepping for us instead?
+# wrapper script for grep program
 
 if [ $# -lt 1 ]; then
         echo "Usage: $(basename $0) PATTERN"
         exit 1
 fi
 
+. $(dirname $0)/util.inc
+
+PATTERN_EXCLUDE_FILE=$HOME/code/exclude-patterns.txt
+EXCLUDED_FILE_ARGS=$(parse_folder_names \
+                         "--exclude-dir=" \
+                         $PATTERN_EXCLUDE_FILE \
+                         " ")
+
+# Note: to make it work in emacs byte-compile /usr/share/emacs/24.5/lisp/progmodes/grep.el.gz
+# after changing function definition of grep()
 exec grep -nHsI --color=always \
-     --exclude-from="$HOME/code/grep-exclude-patterns.txt" \
-     --exclude-dir=.output \
-     --exclude-dir=.svn \
-     --exclude-dir=.git \
-     --exclude-dir=Debug \
-     --exclude-dir=Release \
-     --exclude-dir=dist \
-     --exclude-dir=node_modules \
+     --exclude-from=$PATTERN_EXCLUDE_FILE \
+     $EXCLUDED_FILE_ARGS \
      "$@" * \
-    | sed -r 's/[[:space:]]+/ /' \
-    | grep -vE "/wwwroot/lib/"
+    | sed -r 's/[[:space:]]+/ /'
