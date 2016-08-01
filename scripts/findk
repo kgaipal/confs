@@ -9,7 +9,7 @@ fi
 
 . $(dirname $0)/util.inc
 
-PATTERN_EXCLUDE_FILE=$HOME/code/find-exclude-patterns.txt
+PATTERN_EXCLUDE_FILE=$HOME/code/exclude-patterns.txt
 EXCLUDED_FILE_ARGS=$(parse_folder_names \
                          "-path ./" \
                          $PATTERN_EXCLUDE_FILE \
@@ -18,4 +18,4 @@ EXCLUDED_FILE_ARGS=$(parse_folder_names \
 # appending dummy "-name ''" for last pattern string to work correctly
 exec find . \
      \( $EXCLUDED_FILE_ARGS -name '' \) -prune -o \
-     "$@"
+     "$@" -print
