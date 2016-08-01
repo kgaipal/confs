@@ -17,3 +17,10 @@ _Chutzpah*
 app.d.ts
 jsll.js
 templates.html.js
+.output/
+.svn/
+.git/
+Debug/
+Release/
+dist/
+node_modules/
