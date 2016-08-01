@@ -15,7 +15,10 @@ EXCLUDED_FILE_ARGS=$(parse_folder_names \
                          $PATTERN_EXCLUDE_FILE \
                          " -o")
 
-# appending dummy "-name ''" for last pattern string to work correctly
+# Note: to make it work in emacs byte-compile /usr/share/emacs/24.5/lisp/find-dired.el.gz
+# after changing function definition of find-dired()
+# 1. appending dummy "-name ''" for last pattern string to work correctly
+# 2. appending fake '-printf ""' to make emacs output sane and also not printing pruned dirs
 exec find . \
      \( $EXCLUDED_FILE_ARGS -name '' \) -prune -o \
-     "$@" -print
+     "$@" -printf ""
