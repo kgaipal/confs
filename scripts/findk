@@ -19,6 +19,8 @@ EXCLUDED_FILE_ARGS=$(parse_folder_names \
 # after changing function definition of find-dired()
 # 1. appending dummy "-name ''" for last pattern string to work correctly
 # 2. appending fake '-printf ""' to make emacs output sane and also not printing pruned dirs
+#   -- doesnt work in the normal terminal usage, so disabling this for now
 exec find . \
      \( $EXCLUDED_FILE_ARGS -name '' \) -prune -o \
-     "$@" -printf ""
+     "$@"
+     
