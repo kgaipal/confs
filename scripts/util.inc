@@ -14,7 +14,7 @@ function parse_folder_names()
         if [[ $line =~ ^# ]]; then
             echo ""             # skipping
 
-        elif [[ $line == */ ]]; then
+        elif [[ $line == */* ]]; then
             echo "$PREFIX${line::-1}$SUFFIX"
         fi
 
