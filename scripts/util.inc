@@ -15,7 +15,11 @@ function parse_folder_names()
             echo ""             # skipping
 
         elif [[ $line == */* ]]; then
-            echo "$PREFIX${line::-1}$SUFFIX"
+            let len=-1          # remove the CR from end
+            if [[ $line =~ $'\r' ]]; then
+                len=-2
+            fi
+            echo "$PREFIX${line::$len}$SUFFIX"
         fi
 
     done < "$PATTERN_FILE"
