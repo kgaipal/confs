@@ -19,7 +19,7 @@ function parse_folder_names()
             if [[ $line =~ $'\r' ]]; then
                 len=-2
             fi
-            echo "$PREFIX${line::$len}$SUFFIX"
+            echo "$PREFIX$PWD/${line::$len}$SUFFIX"
         fi
 
     done < "$PATTERN_FILE"
