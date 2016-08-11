@@ -29,3 +29,6 @@ Debug/
 Release/
 dist/
 node_modules/
+
+# same directores above but relative paths to <ROOT/Product/Source>
+CustomerView.Web/dist/
