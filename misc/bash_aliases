@@ -15,5 +15,6 @@ alias rm='rm -i'
 alias gits='git status'
 
 # Create an alias file for eshell
+mkdir -p $HOME/.eshell
 # http://www.emacswiki.org/emacs/EshellAlias
 alias | sed -E "s/^alias ([^=]+)='(.*)'$/alias \1 \2 \$*/g; s/'\\\''/'/g;" > $HOME/.eshell/alias
