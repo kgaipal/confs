@@ -1,6 +1,5 @@
 ::
 :: Kshitij Gaipal
-:: kgaipal@gmail.com
 ::
 :: Exec's Visual Studio dev environment for current shell.
 

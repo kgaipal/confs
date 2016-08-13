@@ -1,6 +1,5 @@
 ::
 :: Kshitij Gaipal
-:: kgaipal@gmail.com
 ::
 :: Sets the custom prompt, path, etc for cmd.exe and also defines some aliases like bash
 :: http://stackoverflow.com/questions/20530996/aliases-in-windows-command-prompt#20531778
