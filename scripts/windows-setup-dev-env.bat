@@ -1,8 +1,8 @@
 :: Sets up various shortcuts and environment variables
 :: Run as administrator
 
-SET HOME=%USERRPROFILE%
-SET START_MENU="%HOME%/AppData/Roaming/Microsoft/Windows/Start Menu/Programs"
+SET HOME=%USERPROFILE%
+SET START_MENU=%HOME%/AppData/Roaming/Microsoft/Windows/Start Menu/Programs
 
 MKDIR "%HOME%/code"
 MKDIR "%HOME%/.local/bin"
@@ -20,6 +20,7 @@ MKLINK "%HOME%/.gitconfig" "%HOME%/code/confs/misc/gitconfig"
 MKLINK "%HOME%/.bashrc" "%HOME%/code/confs/misc/gitconfig"
 
 :: create shortcut for other scripts for start menu only
-MKLINK "%START_MENU%/vs-cmd" "%HOME%/code/confs/scripts/vs-dev-env.bat"
+:: disabling thi now this since wee want to create a shortcut not symlinks!
+::MKLINK "%START_MENU%/vs-cmd" "%HOME%/code/confs/scripts/vs-dev-env.bat"
 
 :: prefer to call a git-bash and setup all commands in that instead
