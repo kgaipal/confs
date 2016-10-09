@@ -49,7 +49,6 @@ sys-block/gparted
 sys-boot/grub
 sys-devel/clang
 sys-devel/gdb
-sys-firmware/b43-firmware
 sys-fs/simple-mtpfs
 sys-kernel/genkernel-next
 sys-kernel/gentoo-sources
