@@ -39,6 +39,7 @@ net-misc/dhcpcd
 net-misc/dropbox
 net-misc/ntp
 net-p2p/transmission
+net-wireless/broadcom-sta
 sys-apps/dmidecode
 sys-apps/gnome-disk-utility
 sys-apps/mlocate
