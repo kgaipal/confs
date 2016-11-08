@@ -20,5 +20,5 @@ EXCLUDED_FILE_ARGS=$(parse_folder_names \
 exec grep -nHsI --color=always \
      --exclude-from=$PATTERN_EXCLUDE_FILE \
      $EXCLUDED_FILE_ARGS \
-     "$@" * \
+     "$@"  \
     | sed -r 's/[[:space:]]+/ /'

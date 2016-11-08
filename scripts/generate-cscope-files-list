@@ -36,6 +36,7 @@ function generate_cscope
 	 \) -prune -o -type f \( \
 		-name *.cpp \
 	     -o -name *.cc \
+	     -o -name *.cs \
 	     -o -name *.hpp \
 	     -o -name *.c \
 	     -o -name *.h \
