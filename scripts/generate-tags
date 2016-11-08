@@ -2,6 +2,7 @@
 
 if [ $# -lt 1 ]; then
     echo "Usage: generate-tags SOURCE_DIR"
+    echo "Notice: Prefere to use cscope program instead of etags."
     exit 1
 fi
 
