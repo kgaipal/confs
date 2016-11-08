@@ -32,8 +32,8 @@ function compile_kernel_and_install
     /usr/bin/genkernel \
         --makeopts=-j$AVAILABLE_CPUS \
         --kernel-config=$KERNEL_CONFIG all \
-    && /usr/sbin/grub2-install /dev/sda \
-    && /usr/sbin/grub2-mkconfig -o /boot/grub/grub.cfg
+    && /usr/sbin/grub-install /dev/sda \
+    && /usr/sbin/grub-mkconfig -o /boot/grub/grub.cfg
 
     popd
 

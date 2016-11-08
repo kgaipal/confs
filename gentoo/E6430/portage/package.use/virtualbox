@@ -1,0 +1,7 @@
+# required by dev-qt/qtcore-5.5.1-r1::gentoo
+# required by dev-qt/qtprintsupport-5.5.1::gentoo
+# required by app-emulation/virtualbox-5.1.0::gentoo[-headless,qt5]
+# required by virtualbox (argument)
+>=dev-libs/libpcre-8.38-r1 pcre16
+
+>=app-emulation/virtualbox-5.0 -python -sdk vnc extensions

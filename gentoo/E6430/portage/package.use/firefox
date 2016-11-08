@@ -1,4 +1,7 @@
-
 # USE="system-*" to prefer system defined libs over firefox's
-www-client/firefox system-icu system-jpeg system-libvpx gtk3
+www-client/firefox system-icu system-jpeg system-libvpx system-libevent system-harfbuzz gtk3 wifi
 
+# required by www-client/firefox-45.2.0::gentoo[system-libvpx]
+# required by @selected
+# required by @world (argument)
+>=media-libs/libvpx-1.5.0 postproc
