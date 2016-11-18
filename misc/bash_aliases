@@ -13,6 +13,8 @@ alias b='cd ..'
 alias rm='rm -i'
 
 alias gits='git status'
+alias gitl='git log'
+alias gitb='git branch'
 
 # Create an alias file for eshell
 mkdir -p $HOME/.eshell
