@@ -1,25 +1,14 @@
 #!/bin/bash
 
-# wrapper script to grep and sed in all files
+# wrapper script to find and replace in all files
 if [ $# -lt 2 ]; then
     echo "Usage: $(basename $0) SEARCH REPLACMENT"
     exit 1
 fi
 
-. $(dirname $0)/util.inc
-
-PATTERN_EXCLUDE_FILE=$HOME/code/exclude-patterns.txt
-EXCLUDED_FILE_ARGS=$(parse_folder_names \
-                         "--exclude-dir=" \
-                         $PATTERN_EXCLUDE_FILE \
-                         " ")
 SEARCH=$1
 REPLACEMENT=$2
 
 SED_CMD="s/$SEARCH/$REPLACEMENT/g"
 
-exec grep -rl --color=never \
-     --exclude-from=$PATTERN_EXCLUDE_FILE \
-     $EXCLUDED_FILE_ARGS \
-     "$SEARCH" \
-    | xargs sed -i $SED_CMD
+exec grepk -rl --color=never "$SEARCH" | xargs sed -i $SED_CMD
