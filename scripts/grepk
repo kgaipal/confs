@@ -3,8 +3,8 @@
 # wrapper script for grep program
 
 if [ $# -lt 1 ]; then
-        echo "Usage: $(basename $0) PATTERN"
-        exit 1
+    echo "Usage: $(basename $0) PATTERN"
+    exit 1
 fi
 
 . $(dirname $0)/util.inc

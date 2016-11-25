@@ -2,7 +2,7 @@
 
 AVAILABLE_CPUS=$(cat /proc/cpuinfo |grep processor|wc  -l)
 
- # PREFIX, PATTERN_FILE, SUFFIX
+# PREFIX, PATTERN_FILE, SUFFIX
 function parse_folder_names()
 {
     PREFIX=$1
