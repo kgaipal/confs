@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # wrapper script to grep and sed in all files
-
 if [ $# -lt 2 ]; then
     echo "Usage: $(basename $0) SEARCH REPLACMENT"
     exit 1
@@ -14,14 +13,13 @@ EXCLUDED_FILE_ARGS=$(parse_folder_names \
                          "--exclude-dir=" \
                          $PATTERN_EXCLUDE_FILE \
                          " ")
+SEARCH=$1
+REPLACEMENT=$2
 
-let SEARCH=$1
-let REPLACEMENT=$2
+SED_CMD="s/$SEARCH/$REPLACEMENT/g"
 
-# Note: to make it work in emacs byte-compile /usr/share/emacs/24.5/lisp/progmodes/grep.el.gz
-# after changing function definition of grep()
 exec grep -rl --color=never \
      --exclude-from=$PATTERN_EXCLUDE_FILE \
      $EXCLUDED_FILE_ARGS \
      "$SEARCH" \
-    | xargs sed -i 's/$SEARCH/$REPLACEMENT/'
+    | xargs sed -i $SED_CMD
