@@ -25,3 +25,5 @@
 [log]
 	follow = true
 	decorate = true
+[credential "https://microsoft.visualstudio.com/"]
+	helper = store
