@@ -12,9 +12,11 @@ alias tree='tree -Ch'
 alias b='cd ..'
 alias rm='rm -i'
 
+# git aliases
 alias gits='git status'
 alias gitl='git log'
 alias gitb='git branch'
+alias gitd='git diff > /tmp/f.diff && em /tmp/f.diff'
 
 # Create an alias file for eshell
 mkdir -p $HOME/.eshell
