@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# wrapper script for program
+
+if [ $# -lt 1 ]; then
+    echo "Usage: $(basename $0) PATTERN"
+    exit 1
+fi
+
+# exec ag --smart --vimgrep --ignore UnitTest --ignore Test --csharp "$@" .
+exec ag --csharp "$@" . \
+    | sed -r 's/[[:space:]]+/ /'
+
