@@ -1,10 +1,11 @@
 #!/bin/bash
-# A short program to open files directly from copy-paste from grep output in emacsclient.
+
+# opens the file in emacsclient for editing;
+# input can be a line from searched result of grepk command.
 
 if [ $# -lt 1 ]; then
     echo "Opens a file in emacs at a give line number (if any)."
     echo -e "Usage: \n\t$(basename $0) FILENAME[:LINENUM[:anygarbagevalue]]"
-    echo
     exit 1
 fi
 

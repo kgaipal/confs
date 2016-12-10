@@ -14,7 +14,6 @@ alias rm='rm -i'
 alias tree='tree -Ch'
 
 # git aliases
-alias gitd='git diff > /tmp/f.diff && DIFF_EDITOR=$EDITOR; if ! [[ -z "$(which emacsclient)" ]]; then DIFF_EDITOR="emacsclient -n " ; fi ; $DIFF_EDITOR /tmp/f.diff'
 alias gits='git status'
 
 # Create an alias file for eshell
