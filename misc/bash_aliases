@@ -1,9 +1,11 @@
 #!/bin/sh
 
+# base ls, all other modifications after this
+alias ls='ls --color=always'
+
 alias l='ls -CFh'
 alias la='ls -Ah'
 alias ll='ls -lh'
-alias ls='ls --color=always'
 
 alias egrep='egrep --color=always'
 alias fgrep='fgrep --color=always'
