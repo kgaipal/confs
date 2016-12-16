@@ -9,6 +9,6 @@ fi
 SEARCH=$1
 REPLACEMENT=$2
 
-SED_CMD="s/$SEARCH/$REPLACEMENT/g"
+SED_CMD=s/$SEARCH/$REPLACEMENT/g
 
-exec grepk -rl --color=never "$SEARCH" | xargs sed -i $SED_CMD
+exec grepk -rl --color=never "$SEARCH" | xargs sed -i "$SED_CMD"
