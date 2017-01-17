@@ -7,5 +7,4 @@ Release
 *.sln
 *.*proj
 *.dll
-*.min.map
-*.min.js
+*.min.*
