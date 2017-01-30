@@ -24,6 +24,13 @@ function validate
     return 0
 }
 
+function build_kernel_dependent_application_modules
+{
+    # TODO: emerge only a package is installed; loop through in a predefined list
+    emerge -1 app-emulation/virtualbox-modules
+    emerge -1 net-wireless/broadcom-sta
+}
+
 function compile_kernel_and_install
 {
     pushd "$PWD"
@@ -51,3 +58,4 @@ if [ $? -ne 0 ]; then
 fi
 
 compile_kernel_and_install
+build_kernel_dependent_application_modules
