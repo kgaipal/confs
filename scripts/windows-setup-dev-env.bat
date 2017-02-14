@@ -2,23 +2,26 @@
 :: Run as administrator
 
 @ECHO OFF
-SET HOME=%USERPROFILE%
-SET START_MENU=%HOME%/Start Menu/Programs
+SET START_MENU=%USERPROFILE%/Start Menu/Programs
 
-MKDIR "%HOME%/code"
-MKDIR "%HOME%/.local/bin"
+MKDIR "%USERPROFILE%/code"
+MKDIR "%USERPROFILE%/.local/bin"
 
 :: clone github's confs.git and make links to essential scripts from it
 :: github's public repo is always read-only without credentials so clone will work without problems!
-%COMSPEC% /C "git clone https://github.com/kgaipal/confs.git "%HOME%/code/confs""
+%COMSPEC% /C "git clone https://github.com/kgaipal/confs.git "%USERPROFILE%/code/confs""
 
 :: Note: to make soft links, use MKLINK instead of bash's ln otherwise
 :: git-bash will copy target file to the link location instead [git bug #???]
-MKLINK "%HOME%/.local/bin/grepk" "%HOME%/code/confs/scripts/grepk"
-MKLINK "%HOME%/.local/bin/findk" "%HOME%/code/confs/scripts/findk"
-MKLINK "%HOME%/.local/bin/util.inc" "%HOME%/code/confs/scripts/util.inc"
-MKLINK "%HOME%/.local/bin/vs-cmd" "%HOME%/code/confs/scripts/vs-dev-env.bat"
-MKLINK "%HOME%/.gitconfig" "%HOME%/code/confs/misc/gitconfig"
+MKLINK "%USERPROFILE%/.local/bin/grepk" "%USERPROFILE%/code/confs/scripts/grepk"
+MKLINK "%USERPROFILE%/.local/bin/findk" "%USERPROFILE%/code/confs/scripts/findk"
+MKLINK "%USERPROFILE%/.local/bin/util.inc" "%USERPROFILE%/code/confs/scripts/util.inc"
+MKLINK "%USERPROFILE%/.local/bin/vs-cmd" "%USERPROFILE%/code/confs/scripts/vs-dev-env.bat"
+MKLINK "%USERPROFILE%/.gitconfig" "%USERPROFILE%/code/confs/misc/gitconfig"
+PUSHD
+CHDIR "%USERPROFILE%/code/confs/misc"
+COPY "exclude-patterns.sample" "%USERPROFILE%/code/exclude-patterns.txt"
+POPD
 
 :: remove unwanted programs which came with vanilla installation
 %COMSPEC% /C "powershell -ExecutionPolicy ByPass -File windows10-remove-default-pacakges.ps1"
@@ -30,7 +33,7 @@ MKLINK "%HOME%/.gitconfig" "%HOME%/code/confs/misc/gitconfig"
 
 :: create shortcut for other scripts for start menu only
 :: disabling thi now this since wee want to create a shortcut not symlinks!
-rem MKLINK "%START_MENU%/vs-cmd" "%HOME%/code/confs/scripts/vs-dev-env.bat"
+rem MKLINK "%START_MENU%/vs-cmd" "%USERPROFILE%/code/confs/scripts/vs-dev-env.bat"
 
 :: bashrc specific
 (
@@ -43,6 +46,6 @@ ECHO # alias definitions
 ECHO if [ -f $BASHRC_EXTS/bash_aliases ]; then
 ECHO   . $BASHRC_EXTS/bash_aliases
 ECHO fi
-) > "%HOME%/.bashrc"
+) > "%USERPROFILE%/.bashrc"
 
 ECHO Done setting up
