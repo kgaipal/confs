@@ -8,3 +8,6 @@ Release
 *.*proj
 *.dll
 *.min.*
+*.tm4
+*.FxCop
+*.xsd
