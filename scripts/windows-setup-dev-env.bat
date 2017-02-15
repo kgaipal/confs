@@ -14,6 +14,8 @@ MKDIR "%USERPROFILE%/.local/bin"
 :: Note: to make soft links, use MKLINK instead of bash's ln otherwise
 :: git-bash will copy target file to the link location instead [git bug #???]
 MKLINK "%USERPROFILE%/.local/bin/grepk" "%USERPROFILE%/code/confs/scripts/grepk"
+MKLINK "%USERPROFILE%/.local/bin/find-n-replace" "%USERPROFILE%/code/confs/scripts/find-n-replace"
+MKLINK "%USERPROFILE%/.local/bin/em" "%USERPROFILE%/code/confs/scripts/em"
 MKLINK "%USERPROFILE%/.local/bin/findk" "%USERPROFILE%/code/confs/scripts/findk"
 MKLINK "%USERPROFILE%/.local/bin/util.inc" "%USERPROFILE%/code/confs/scripts/util.inc"
 MKLINK "%USERPROFILE%/.local/bin/vs-cmd" "%USERPROFILE%/code/confs/scripts/vs-dev-env.bat"
