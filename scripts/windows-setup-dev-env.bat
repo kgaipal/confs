@@ -49,3 +49,10 @@ ECHO fi
 ) > "%USERPROFILE%/.bashrc"
 
 ECHO Done setting up
+
+:: Fix msys2 slowness on domain joined window 10 accounts
+:: 1. Run the following commands to fix slow msys2
+:: 2. Remove 'db' from /etc/nsswitch.conf
+:: [http://bjg.io/guide/cygwin-ad/]
+rem mkpasswd -l -c > /etc/passwd
+rem mkgroup -l -c > /etc/group
