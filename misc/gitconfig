@@ -24,7 +24,7 @@
 [log]
 	follow = true
 	decorate = true
-[credential "https://microsoft.visualstudio.com/"]
+[credential "https://*.visualstudio.com/"]
 	helper = store
 [credential "https://github.com/"]
 	helper = store
