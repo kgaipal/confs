@@ -2,7 +2,7 @@
 
 # wrapper script to find and replace in all files
 if [ $# -lt 2 ]; then
-    echo "Usage: $(basename $0) SEARCH REPLACMENT"
+    echo "Usage: $(basename $0) SEARCH REPLACEMENT"
     exit 1
 fi
 
