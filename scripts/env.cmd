@@ -12,7 +12,7 @@
 @ECHO OFF
 
 :: Add "~/.local/bin" and some usefull unix tools like grep, find, etc available
-set PATH="%USERPROFILE%/.local/bin";"%USERPROFILE%/code/git-sdk/usr/bin";%PATH%
+set PATH="%USERPROFILE%/.local/bin;C:/msys64/usr/bin;C:/msys64/mingw64/bin";%PATH%
 
 :: Set prompt
 set PROMPT=[$P]$_$$ 
