@@ -26,12 +26,12 @@ COPY "exclude-patterns.sample" "%USERPROFILE%/code/exclude-patterns.txt"
 POPD
 
 :: remove unwanted programs which came with vanilla installation
-%COMSPEC% /C "powershell -ExecutionPolicy ByPass -File windows10-remove-default-pacakges.ps1"
+%COMSPEC% /C "powershell -ExecutionPolicy ByPass -File "%USERPROFILE%/code/confs/scripts/windows10-remove-default-pacakges.ps1"
 
 :: Registry editing
-%COMSPEC% /C caps_lock_to_control.reg
-%COMSPEC% /C cmd_env.reg
-%COMSPEC% /C remove_personal_one_drive_menu_explorer.reg
+%COMSPEC% /C %USERPROFILE%/code/confs/scripts/caps_lock_to_control.reg
+%COMSPEC% /C %USERPROFILE%/code/confs/scripts/cmd_env.reg
+%COMSPEC% /C %USERPROFILE%/code/confs/scripts/remove_personal_one_drive_menu_explorer.reg
 
 :: create shortcut for other scripts for start menu only
 :: disabling thi now this since wee want to create a shortcut not symlinks!
