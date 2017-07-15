@@ -26,7 +26,7 @@ COPY "exclude-patterns.sample" "%USERPROFILE%/code/exclude-patterns.txt"
 POPD
 
 :: remove unwanted programs which came with vanilla installation
-%COMSPEC% /C "powershell -ExecutionPolicy ByPass -File "%USERPROFILE%/code/confs/scripts/windows10-remove-default-pacakges.ps1"
+%COMSPEC% /C "powershell -ExecutionPolicy ByPass -File %USERPROFILE%/code/confs/scripts/windows10-remove-default-pacakges.ps1"
 
 :: Registry editing
 %COMSPEC% /C %USERPROFILE%/code/confs/scripts/caps_lock_to_control.reg
