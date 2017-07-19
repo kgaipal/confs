@@ -17,8 +17,8 @@
 #/dev/sda1: home
 UUID=7461bebe-201f-4add-9783-81b6f8dbf350	/	ext4	errors=remount-ro,noatime		0	1
 
-#/dev/sda5: swap
-UUID=92032f23-a606-4564-9837-c721c1e6d0e6	none	swap	sw					0	0
+# swap
+/swapfile					none	swap	sw					0	0
 
 #/dev/sda6: home
 UUID=f4fb20b7-eb70-48f5-b221-425426c2d937	/home	ext4	defaults,user_xattr			0	2
