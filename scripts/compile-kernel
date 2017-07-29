@@ -27,7 +27,8 @@ function validate
 function build_kernel_dependent_application_modules
 {
     # TODO: emerge only a package is installed; loop through in a predefined list
-    emerge -1 app-emulation/virtualbox-modules net-wireless/broadcom-sta
+    emerge -1  net-wireless/broadcom-sta
+# app-emulation/virtualbox-modules
 }
 
 function compile_kernel_and_install
