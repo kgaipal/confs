@@ -18,7 +18,7 @@ MKLINK "%USERPROFILE%/.local/bin/find-n-replace" "%USERPROFILE%/code/confs/scrip
 MKLINK "%USERPROFILE%/.local/bin/em" "%USERPROFILE%/code/confs/scripts/em"
 MKLINK "%USERPROFILE%/.local/bin/findk" "%USERPROFILE%/code/confs/scripts/findk"
 MKLINK "%USERPROFILE%/.local/bin/util.inc" "%USERPROFILE%/code/confs/scripts/util.inc"
-MKLINK "%USERPROFILE%/.local/bin/vs-cmd" "%USERPROFILE%/code/confs/scripts/vs-dev-env.bat"
+MKLINK "%USERPROFILE%/.local/bin/vs-make" "%USERPROFILE%/code/confs/scripts/vs-make.bat"
 MKLINK "%USERPROFILE%/.gitconfig" "%USERPROFILE%/code/confs/misc/gitconfig"
 PUSHD
 CHDIR "%USERPROFILE%/code/confs/misc"
