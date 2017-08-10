@@ -3,5 +3,5 @@
 ::
 :: Exec's msbuild from current shell.
 
-@call "C:/Program Files (x86)/Microsoft Visual Studio 14.0/Common7/Tools/VsDevCmd.bat"
-@call "msbuild" "/v:quiet"
+@CALL "C:/Program Files (x86)/Microsoft Visual Studio 14.0/Common7/Tools/VsDevCmd.bat"
+CALL "msbuild" "/v:minimal" %*
