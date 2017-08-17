@@ -1,3 +1,0 @@
-# required by app-emulation/docker-1.11.0::gentoo[seccomp]
-# required by app-emulation/docker (argument)
->=sys-libs/libseccomp-2.3.0 static-libs

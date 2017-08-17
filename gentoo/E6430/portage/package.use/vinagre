@@ -1,0 +1,2 @@
+# USE="rdp" for Windows VirtualBox machines
+net-misc/vinagre rdp

@@ -1,2 +1,0 @@
-# USE="-X" disabling X othwerwise it can pull qt libs which is banned sytem wide right now
-net-misc/dropbox -X

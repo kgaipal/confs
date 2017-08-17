@@ -1,0 +1,11 @@
+
+# required by dev-util/cargo-0.17.0::gentoo
+# required by sys-apps/ripgrep-0.5.1::gentoo
+# required by ripgrep (argument)
+=dev-lang/rust-1.16.0 ~amd64
+# required by dev-lang/rust-1.16.0::gentoo
+# required by sys-apps/ripgrep-0.5.1::gentoo
+# required by ripgrep (argument)
+=dev-util/cargo-0.17.0 ~amd64
+# required by ripgrep (argument)
+=sys-apps/ripgrep-0.5.2 ~amd64

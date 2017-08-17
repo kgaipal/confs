@@ -1,5 +1,8 @@
 # USE="system-*" to prefer system defined libs over firefox's
-www-client/firefox system-icu system-jpeg system-libvpx system-libevent system-harfbuzz gtk3 wifi
+www-client/firefox system-icu system-jpeg system-libvpx system-libevent system-harfbuzz
+
+# USE="wifi" for wifi detection
+www-client/firefox wifi
 
 # required by www-client/firefox-45.2.0::gentoo[system-libvpx]
 # required by @selected
