@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# FIXME (ksgaipal): follow up with counsel on github or fix this script
+exec find "$@"
+echo "short circuiting until counsel-file-jump fixes in emacs"
+exit
+
 # wrapper script for find program
 
 if [ $# -lt 1 ]; then
