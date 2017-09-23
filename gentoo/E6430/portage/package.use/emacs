@@ -1,9 +1,8 @@
 # emacs editor specific
 # USE="xft" for enabling anti-aliases fonts
 # https://wiki.gentoo.org/wiki/Xft_support_for_GNU_Emacs
-app-editors/emacs gconf gsettings gzip-el xft
+app-editors/emacs gconf gsettings gzip-el xft libxml2
 
-# libxml2 sound
 
 # emacs support in other packages
 dev-util/cscope emacs
