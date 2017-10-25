@@ -1,10 +1,5 @@
 # Necessary packages and their flags I need
 #
-media-gfx/gimp smp
-
-# for androidev
-sys-libs/zlib abi_x86_32
-
 
 ##################################################################
 # Others to satisfy portage @world, will remove later ... may be?
