@@ -63,7 +63,7 @@ function build_kernel_dependent_application_modules
 
     echo "installing '$PACKAGE_NAME' ..."
 
-    if ! $(emerge -1 $PACKAGE_NAME) ; then
+    if ! emerge -1 $PACKAGE_NAME ; then
         echo "failed"
         exit 1
     fi
@@ -75,7 +75,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-compile_kernel_and_install
+# compile_kernel_and_install
 build_kernel_dependent_application_modules app-emulation/virtualbox-modules
 build_kernel_dependent_application_modules net-wireless/broadcom-sta
 build_kernel_dependent_application_modules sys-firmware/b43-firmware
