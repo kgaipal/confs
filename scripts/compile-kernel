@@ -24,13 +24,6 @@ function validate
     return 0
 }
 
-function build_kernel_dependent_application_modules
-{
-    # TODO: emerge only a package is installed; loop through in a predefined list
-    emerge -1  net-wireless/broadcom-sta
-# app-emulation/virtualbox-modules
-}
-
 function compile_kernel_and_install
 {
     pushd "$PWD"
@@ -51,6 +44,31 @@ function compile_kernel_and_install
 #  && /sbin/lilo
 }
 
+function build_kernel_dependent_application_modules
+{
+    PACKAGE_NAME=$1
+    shift
+
+    if [[ -z $PACKAGE_NAME ]]; then
+        echo "missing package name"
+        exit 1
+    fi
+
+    NOT_INSTALLED_MSG="No matches found"
+    PACKAGE_INSTALLED=$(eix -Ic $PACKAGE_NAME)
+
+    if [ "$PACKAGE_INSTALLED" == "$NOT_INSTALLED_MSG" ]; then
+        return
+    fi
+
+    echo "installing '$PACKAGE_NAME' ..."
+
+    if ! $(emerge -1 $PACKAGE_NAME) ; then
+        echo "failed"
+        exit 1
+    fi
+}
+
 validate $*
 if [ $? -ne 0 ]; then
     usage
@@ -58,4 +76,6 @@ if [ $? -ne 0 ]; then
 fi
 
 compile_kernel_and_install
-build_kernel_dependent_application_modules
+build_kernel_dependent_application_modules app-emulation/virtualbox-modules
+build_kernel_dependent_application_modules net-wireless/broadcom-sta
+build_kernel_dependent_application_modules sys-firmware/b43-firmware
