@@ -43,6 +43,7 @@ net-misc/dropbox
 net-misc/vinagre
 net-p2p/transmission
 net-wireless/broadcom-sta
+sys-apps/dmidecode
 sys-apps/dog
 sys-apps/gnome-disk-utility
 sys-apps/mlocate
