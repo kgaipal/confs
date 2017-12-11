@@ -13,7 +13,7 @@
 	clb = remote prune origin
 
 	# https://www.georgebrock.com/blog/useful-git-aliases/
-	graph = log --all --graph --decorate --oneline -n30
+	graph = log --no-color --all --graph --decorate --oneline -n30
 [push]
 	default = simple
 [color]
