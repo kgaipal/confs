@@ -4,18 +4,30 @@
 
 function usage
 {
-    echo "kernel config path missing"
+    echo "kernel config is required to compile"
     echo "Usage:"
     echo -e "\t$ ./$(basename "$0") PATH"
 }
 
-function validate
+function validate_kernel_config
 {
     if [ "$1" == "--help" ]; then
         return 1
     fi
 
     if [ $# -lt 1 ]; then
+        return 1
+    fi
+
+    # validate existing file
+    if [[ ! -f $1 ]]; then
+        echo "'$1' is not a valid file"
+        return 1
+    fi
+
+    # validate file
+    if [[ ! -f $1 ]]; then
+        echo "'$1' is not a valid file"
         return 1
     fi
 
@@ -26,7 +38,14 @@ function validate
 
 function compile_kernel_and_install
 {
+    validate_kernel_config $*
+    if [ $? -ne 0 ]; then
+        usage
+        exit 1
+    fi
+
     pushd "$PWD"
+    echo "using config: " $KERNEL_CONFIG
     cd /usr/src/linux
 
     /usr/bin/genkernel \
@@ -69,13 +88,7 @@ function build_kernel_dependent_application_modules
     fi
 }
 
-validate $*
-if [ $? -ne 0 ]; then
-    usage
-    exit 1
-fi
-
-# compile_kernel_and_install
+compile_kernel_and_install $1
 build_kernel_dependent_application_modules app-emulation/virtualbox-modules
 build_kernel_dependent_application_modules net-wireless/broadcom-sta
 build_kernel_dependent_application_modules sys-firmware/b43-firmware
