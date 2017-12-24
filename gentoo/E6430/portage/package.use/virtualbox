@@ -18,4 +18,4 @@
 # USE="vnc" is optional; very useful to connect multiple VMs through a
 # vnc client and all machines show in tabs
 # USE="extensions" required for USB 3.0 support in a VM
->=app-emulation/virtualbox-5.0 -sdk vnc
+>=app-emulation/virtualbox-5.0 -sdk vnc vboxwebsrv

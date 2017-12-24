@@ -1,0 +1,6 @@
+# rstudio IDE for R scripts
+=sci-mathematics/rstudio-1.1.383 ~amd64
+
+# required by sci-mathematics/rstudio-1.0.153::gentoo
+# required by rstudio (argument)
+=dev-libs/mathjax-2.7.0 ~amd64

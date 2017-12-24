@@ -1,3 +1,4 @@
+app-admin/eclean-kernel
 app-admin/emacs-updater
 app-admin/localepurge
 app-admin/sudo
@@ -16,6 +17,7 @@ app-portage/portpeek
 app-text/pdfshuffler
 app-text/tree
 dev-lang/go
+dev-lang/mono
 dev-perl/rename
 dev-python/pexpect
 dev-python/pip
@@ -36,13 +38,13 @@ gnome-extra/nautilus-dropbox
 media-fonts/lohit-fonts
 media-gfx/eog
 media-gfx/evoluspencil
+media-gfx/gnome-screenshot
 media-gfx/inkscape
 media-video/totem
 net-misc/drive
 net-misc/dropbox
-net-misc/vinagre
 net-p2p/transmission
-net-wireless/broadcom-sta
+sci-mathematics/rstudio
 sys-apps/dmidecode
 sys-apps/dog
 sys-apps/gnome-disk-utility
@@ -53,6 +55,7 @@ sys-apps/usbutils
 sys-boot/grub
 sys-devel/clang
 sys-devel/gdb
+sys-firmware/b43-firmware
 sys-fs/simple-mtpfs
 sys-kernel/genkernel-next
 sys-kernel/gentoo-sources

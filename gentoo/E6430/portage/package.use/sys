@@ -1,13 +1,14 @@
 # USE="graphite" for more optimizations
-# USE="-fortran" diables obsolete or uneeded language support
-sys-devel/gcc -fortran graphite
+# USE="fortran" required for dependency on rstudio IDE
+sys-devel/gcc -fortran graphite fortran
 
 # various filesystems support which will be used most often
+#sys-block/gparted fat hfs ntfs
 sys-apps/gnome-disk-utility fat
 
 # required by sys-devel/clang-3.5.0-r100::gentoo
 # required by sys-devel/clang (argument)
-sys-devel/llvm clang gold
+sys-devel/llvm gold
 
 # when gnome-disk-utility fails this always works
 sys-block/gparted fat hfs ntfs

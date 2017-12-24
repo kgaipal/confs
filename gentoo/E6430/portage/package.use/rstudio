@@ -1,0 +1,16 @@
+# USE="server" make this instance of rstudio as server
+sci-mathematics/rstudio server
+
+# required by sci-mathematics/rstudio-1.0.153::gentoo[-dedicated]
+# required by rstudio (argument)
+>=dev-qt/qtsingleapplication-2.6.1_p20150629 qt5
+# required by dev-qt/qtsingleapplication-2.6.1_p20150629::gentoo
+# required by sci-mathematics/rstudio-1.0.153::gentoo[-dedicated]
+# required by rstudio (argument)
+>=dev-qt/qtlockedfile-2.4.1_p20150629 qt5
+
+# USE="doc" otherwise rstudio complains before launch
+dev-lang/R doc java
+
+# USE="webchannel" is required for rstudio dependency
+dev-qt/qtwebkit webchannel
