@@ -51,8 +51,7 @@ function compile_kernel_and_install
     /usr/bin/genkernel \
         --makeopts=-j$AVAILABLE_CPUS \
         --kernel-config=$KERNEL_CONFIG all \
-    && /usr/sbin/grub-install /dev/sda \
-    && /usr/sbin/grub-mkconfig -o /boot/grub/grub.cfg
+    && /usr/sbin/grub-install /dev/sda
 
     popd
 
@@ -61,6 +60,11 @@ function compile_kernel_and_install
 #  && genkernel --install initramfs \
 #  && cp -v ./arch/x86_64/boot/bzImage /boot/kernel-$(uname -r) \
 #  && /sbin/lilo
+}
+
+function update_grub_entries
+{
+    /usr/sbin/grub-mkconfig -o /boot/grub/grub.cfg
 }
 
 function build_kernel_dependent_application_modules
@@ -88,7 +92,9 @@ function build_kernel_dependent_application_modules
     fi
 }
 
+# TODO (kgaipal): make invokation from commment line based on options
 compile_kernel_and_install $1
+update_grub_entries
 build_kernel_dependent_application_modules app-emulation/virtualbox-modules
 build_kernel_dependent_application_modules net-wireless/broadcom-sta
 build_kernel_dependent_application_modules sys-firmware/b43-firmware
