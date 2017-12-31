@@ -7,7 +7,6 @@
 
 # USE="networkmanager" until this becomes part of profile
 >=gnome-base/gnome-control-center-3.8.3 networkmanager
-media-plugins/gst-plugins-meta ffmpeg
 
 
 # required by net-libs/webkit-gtk-2.18.2::gentoo[gstreamer]
@@ -18,4 +17,5 @@ media-plugins/gst-plugins-meta ffmpeg
 # required by @selected
 # required by @world (argument)
 >=media-libs/gst-plugins-bad-1.10.5 egl
+media-plugins/gst-plugins-meta ffmpeg
 

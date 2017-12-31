@@ -1,10 +1,10 @@
-# USE="system-*" to prefer system defined libs over firefox's
-www-client/firefox system-icu system-jpeg system-libvpx system-libevent system-harfbuzz
-
-# USE="wifi" for wifi detection
-www-client/firefox wifi
 
 # required by www-client/firefox-45.2.0::gentoo[system-libvpx]
 # required by @selected
 # required by @world (argument)
 >=media-libs/libvpx-1.5.0 postproc
+# USE="system-*" to prefer system defined libs over firefox's
+www-client/firefox system-harfbuzz system-icu system-jpeg system-libevent system-libvpx
+
+# USE="wifi" for wifi detection
+www-client/firefox wifi
