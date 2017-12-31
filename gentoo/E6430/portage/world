@@ -11,6 +11,7 @@ app-editors/emacs
 app-editors/nano
 app-portage/cpuid2cpuflags
 app-portage/eix
+app-portage/flaggie
 app-portage/genlop
 app-portage/gentoolkit
 app-portage/portpeek
