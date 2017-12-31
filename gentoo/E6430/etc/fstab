@@ -27,4 +27,4 @@ UUID=f4fb20b7-eb70-48f5-b221-425426c2d937	/home	ext4	defaults,user_xattr			0	2
 tmpfs	/var/portage/tmpfs	tmpfs	uid=portage,gid=portage,mode=0775,size=6G,noatime		0	0
 
 #external_disk
-UUID=22b5eea1-5c49-433e-8ff2-515d245cda17	/media/external_disk	ext4	defaults,user_xattr	0	2
+#UUID=22b5eea1-5c49-433e-8ff2-515d245cda17	/media/external_disk	ext4	defaults,user_xattr	0	2
