@@ -2,8 +2,8 @@
 
 # this script overwrite the following xml tag in config file
 # <add key="fileNumber" value="-1"/>
-
-SCOPE_APP="C://Users//ksgaipal//Documents//Cosmos//PullDataFromCosmos//iscopeTool.exe"
+BASE_DIR="C://Users//ksgaipal//Documents"
+SCOPE_APP="${BASE_DIR}/Cosmos//PullDataFromCosmos//iscopeTool.exe"
 SCOPE_APP_CONFIG_FILE=${SCOPE_APP}".config"
 TERMINAL_APP="C://msys64//mingw64.exe"
 MAX_HOUR=23
