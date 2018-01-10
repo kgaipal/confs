@@ -1,0 +1,25 @@
+#!/bin/bash
+
+CONFIG_FILE="test.xml"
+CMD_EXE="gnome-terminal"
+function launch_cmd_in_sequence
+{
+    local prev_num=-1
+    for num in `seq 0 1 23`
+    do
+        local num2=`printf "%02d" $num`
+        echo "$prev_num -> $num2"
+
+        # replace
+        sed -i "s/<filenumber = \"$prev_num\" \/>/<filenumber = \"$num2\" \/>/g" $CONFIG_FILE
+
+        prev_num=$num2
+
+        # launch exe
+        eval $CMD_EXE -e "echo $num2"
+        sleep 1s
+
+    done
+}
+
+launch_cmd_in_sequence
