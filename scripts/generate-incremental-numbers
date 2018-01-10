@@ -1,23 +1,35 @@
 #!/bin/bash
 
-CONFIG_FILE="test.xml"
-CMD_EXE="gnome-terminal"
+# <add key="fileNumber" value="-1"/>
+
+CONFIG_FILE="c:/msys64/home/ksgaipal/Documents/Cosmos/PullDataFromCosmos/iscopeTool.exe.config"
+CMD_EXE="START cmd.exe /C "
+
+function create_xml_tag
+{
+    echo "<add key=\"fileNumber\" value=\"$1\"\/>"
+}
+
 function launch_cmd_in_sequence
 {
     local prev_num=-1
-    for num in `seq 0 1 23`
+    for num in `seq 0 1 1`
     do
+        # prepare search format
         local num2=`printf "%02d" $num`
         echo "$prev_num -> $num2"
+        local search_text=`create_xml_tag $prev_num`
+        local replace_text=`create_xml_tag $num2`
 
-        # replace
-        sed -i "s/<filenumber = \"$prev_num\" \/>/<filenumber = \"$num2\" \/>/g" $CONFIG_FILE
+        # replace now
+        sed -i "s/$search_text/$replace_text/g" $CONFIG_FILE
 
-        prev_num=$num2
-
-        # launch exe
-        eval $CMD_EXE -e "echo $num2"
+        # launch program
+        eval $CMD_EXE "echo $num2"
         sleep 1s
+
+        # update counter
+        prev_num=$num2
 
     done
 }
