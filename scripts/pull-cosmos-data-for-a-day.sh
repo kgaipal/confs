@@ -38,7 +38,7 @@ function launch_cmd_in_sequence
         # launch program for each hour every 1 min
         echo "starting hour: $num2"
         eval $TERMINAL_APP $SCOPE_APP
-        sleep 1m
+        sleep 5m
 
         # update counter
         prev_num=$num2
