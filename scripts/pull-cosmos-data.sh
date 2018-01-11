@@ -130,9 +130,8 @@ function push_to_sql
 
 print_variables
 
-# # pull data from days inclusive in range [start, end]
+# pull data from days inclusive in range [start, end]
 pull_for_days_in_range 28 31
-# pull_for_a_day
 
 # push to sql
 push_to_sql
