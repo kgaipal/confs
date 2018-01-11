@@ -5,7 +5,7 @@
 # <add key="fileNumber" value="-1"/>
 
 BASE_APP_DIR="C://Users//ksgaipal//Documents//Cosmos"
-COSMOS_DATA_DIR_PREFIX="c:/msys64/home/ksgaipal/Downloads/CosmosData_201712"
+COSMOS_DATA_DIR_PREFIX="c:\/msys64\/home\/ksgaipal\/Downloads\/CosmosData_201712"
 
 # pull cosomos data into xml files specific
 SCOPE_APP="${BASE_APP_DIR}//PullDataFromCosmos//iscopeTool.exe"
@@ -111,10 +111,10 @@ function pull_for_days_in_range
         sed -i "s/$search_text/$replace_text/g" $SCOPE_APP_CONFIG_FILE
 
         # launch program for each hour every 1 min
-        # echo
+        echo
         echo "starting day: $day"
-        # pull_for_a_day
-        # echo
+        pull_for_a_day
+        echo
 
         # update counter
         prev_day=$day
@@ -131,8 +131,8 @@ function push_to_sql
 print_variables
 
 # # pull data from days inclusive in range [start, end]
-# pull_for_days_in_range 28 31
-pull_for_a_day
+pull_for_days_in_range 28 31
+# pull_for_a_day
 
 # push to sql
 push_to_sql
