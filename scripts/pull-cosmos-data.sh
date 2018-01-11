@@ -62,12 +62,22 @@ function print_variables
     echo
 }
 
-function launch_and_sleep_hour_job
+# launch program for each hour every x seconds
+function launch_hour_job
 {
     echo -n "starting for $1 hour..."
 
     eval $TERMINAL_APP $SCOPE_APP
     sleep $PAUSE_DURATION_BEFORE_NEW_HOUR_JOB
+
+    echo " done"
+}
+
+function launch_day_job
+{
+    echo -n "starting for $1 day..."
+
+    pull_for_a_day
 
     echo " done"
 }
@@ -87,8 +97,7 @@ function pull_for_a_day
         replace_text=`create_scope_file_number_xml_tag $hour`
         sed -i "s/$search_text/$replace_text/g" $SCOPE_APP_CONFIG_FILE
 
-        # launch program for each hour every x seconds
-        launch_and_sleep_hour_job $hour
+        launch_hour_job $hour
 
         # update counter
         prev_hour=$hour
@@ -117,9 +126,7 @@ function pull_for_days_in_range
         replace_text=`create_scope_file_save_location_xml_tag $day`
         sed -i "s/$search_text/$replace_text/g" $SCOPE_APP_CONFIG_FILE
 
-        echo -n "starting day: ${day}..."
-        pull_for_a_day
-        echo " done"
+        launch_day_job $day
 
         # update counter
         prev_day=$day
