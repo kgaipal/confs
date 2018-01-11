@@ -4,7 +4,7 @@
 # need this start condition
 # <add key="fileNumber" value="-1"/>
 
-# change these two only
+# change the user only (and path if needed)
 LOGGED_IN_USER="ksgaipal"
 BASE_COSMOS_APP_DIR="C://Users//${LOGGED_IN_USER}//Documents//Cosmos"
 COSMOS_DATA_DIR_PREFIX="C:\/Users\/${LOGGED_IN_USER}\/Downloads\/CosmosData_201712"
