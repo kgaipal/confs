@@ -20,6 +20,7 @@ TERMINAL_APP="C://msys64//mingw64.exe"
 
 # all 24 hours
 MAX_HOUR=23
+PAUSE_DURATION_BEFORE_NEW_HOUR_JOB=5m
 
 function create_day_format
 {
@@ -61,6 +62,16 @@ function print_variables
     echo
 }
 
+function launch_and_sleep_hour_job
+{
+    echo -n "starting for $1 hour..."
+
+    eval $TERMINAL_APP $SCOPE_APP
+    sleep $PAUSE_DURATION_BEFORE_NEW_HOUR_JOB
+
+    echo " done"
+}
+
 function pull_for_a_day
 {
     local prev_hour=-1
@@ -76,11 +87,8 @@ function pull_for_a_day
         replace_text=`create_scope_file_number_xml_tag $hour`
         sed -i "s/$search_text/$replace_text/g" $SCOPE_APP_CONFIG_FILE
 
-        # launch program for each hour every 1 min
-        echo -n "starting for $hour hour..."
-        eval $TERMINAL_APP $SCOPE_APP
-        echo " done"
-        sleep 5m
+        # launch program for each hour every x seconds
+        launch_and_sleep_hour_job $hour
 
         # update counter
         prev_hour=$hour
