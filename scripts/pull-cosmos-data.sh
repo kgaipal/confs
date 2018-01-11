@@ -23,6 +23,11 @@ function create_scope_file_save_location_xml_tag
     echo "<add key =\"storecosmosfilelocation\" value =\"$1\"\/>"
 }
 
+function create_scope_file_read_location_xml_tag
+{
+    echo "<add key=\"sourcedir\" value=\"$1\"\/>"
+}
+
 function print_variables
 {
     echo "Script variables:"
@@ -54,8 +59,40 @@ function pull_for_a_day
         prev_num=$num2
     done
 
-    echo "done."
+    echo "done [day]."
+}
+
+function pull_for_days_range
+{
+    local prev_day=-1
+    local start_day=$1
+    local end_day=$2
+    for num in `seq $START_DAY 1 $END_DAY`
+    do
+        # prepare search format
+        local day=`printf "%02d" $num`
+        local search_text=`create_scope_file_number_xml_tag $prev_day`
+        local replace_text=`create_scope_file_number_xml_tag $day`
+
+        # replace now
+        sed -i "s/$search_text/$replace_text/g" $SCOPE_APP_CONFIG_FILE
+
+        # launch program for each hour every 1 min
+        echo
+        echo "starting day: $day"
+        # pull_for_a_day
+        echo
+
+        # update counter
+        prev_day=$day
+    done
+
+    echo "done [days-range]."
 }
 
 print_variables
-pull_for_a_day
+
+# pull data from days inclusive in range [start, end]
+pull_for_days_range 28 29
+
+push_to_sql
