@@ -67,12 +67,13 @@ function pull_for_a_day
 
     for num in `seq 0 1 $MAX_HOUR`
     do
-        # prepare search format
         local hour=`create_hour_format $num`
-        local search_text=`create_scope_file_number_xml_tag $prev_hour`
-        local replace_text=`create_scope_file_number_xml_tag $hour`
+        local search_text=""
+        local replace_text=""
 
-        # replace now
+        # replace hour
+        search_text=`create_scope_file_number_xml_tag $prev_hour`
+        replace_text=`create_scope_file_number_xml_tag $hour`
         sed -i "s/$search_text/$replace_text/g" $SCOPE_APP_CONFIG_FILE
 
         # launch program for each hour every 1 min
@@ -84,8 +85,6 @@ function pull_for_a_day
         # update counter
         prev_hour=$hour
     done
-
-    echo "done [day]."
 }
 
 function pull_for_days_in_range
@@ -110,17 +109,13 @@ function pull_for_days_in_range
         replace_text=`create_scope_file_save_location_xml_tag $day`
         sed -i "s/$search_text/$replace_text/g" $SCOPE_APP_CONFIG_FILE
 
-        # launch program for each hour every 1 min
-        echo
-        echo "starting day: $day"
+        echo -n "starting day: ${day}..."
         pull_for_a_day
-        echo
+        echo " done"
 
         # update counter
         prev_day=$day
     done
-
-    echo "done [days-range]."
 }
 
 function push_to_sql
