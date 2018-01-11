@@ -13,14 +13,14 @@ function create_scope_file_number_xml_tag
     echo "<add key=\"fileNumber\" value=\"$1\"\/>"
 }
 
-function create_scope_day_xml_tag
+function create_scope_file_date_xml_tag
 {
-    echo "<add key=\"day\" value=\"$1\"\/>"
+    echo "<add key=\"date\" value=\"$1\"\/>"
 }
 
-function create_scope_save_location_xml_tag
+function create_scope_file_save_location_xml_tag
 {
-    echo "<add key=\"day\" value=\"$1\"\/>"
+    echo "<add key =\"storecosmosfilelocation\" value =\"$1\"\/>"
 }
 
 function print_variables
