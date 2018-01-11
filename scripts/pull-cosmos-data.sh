@@ -82,6 +82,39 @@ function launch_day_job
     echo " done"
 }
 
+function replace_hour
+{
+    local prev_hour=$1
+    local hour=$2
+
+    # replace hour
+    local search_text=`create_scope_file_number_xml_tag $prev_hour`
+    local replace_text=`create_scope_file_number_xml_tag $hour`
+    sed -i "s/$search_text/$replace_text/g" $SCOPE_APP_CONFIG_FILE
+}
+
+function replace_day
+{
+    local prev_day=$1
+    local day=$2
+
+    # replace date
+    local search_text=`create_scope_file_date_xml_tag $prev_day`
+    local replace_text=`create_scope_file_date_xml_tag $day`
+    sed -i "s/$search_text/$replace_text/g" $SCOPE_APP_CONFIG_FILE
+}
+
+function replace_downloaded_file_location
+{
+    local prev_day=$1
+    local day=$2
+
+    # replace downloaded file location
+    local search_text=`create_scope_file_save_location_xml_tag $prev_day`
+    local replace_text=`create_scope_file_save_location_xml_tag $day`
+    sed -i "s/$search_text/$replace_text/g" $SCOPE_APP_CONFIG_FILE
+}
+
 function pull_for_a_day
 {
     local prev_hour=-1
@@ -89,14 +122,8 @@ function pull_for_a_day
     for num in `seq 0 1 $MAX_HOUR`
     do
         local hour=`create_hour_format $num`
-        local search_text=""
-        local replace_text=""
 
-        # replace hour
-        search_text=`create_scope_file_number_xml_tag $prev_hour`
-        replace_text=`create_scope_file_number_xml_tag $hour`
-        sed -i "s/$search_text/$replace_text/g" $SCOPE_APP_CONFIG_FILE
-
+        replace_hour $prev_hour $hour
         launch_hour_job $hour
 
         # update counter
@@ -113,19 +140,9 @@ function pull_for_days_in_range
     for num in `seq $start_day 1 $end_day`
     do
         local day=`create_day_format $num`
-        local search_text=""
-        local replace_text=""
 
-        # replace date
-        search_text=`create_scope_file_date_xml_tag $prev_day`
-        replace_text=`create_scope_file_date_xml_tag $day`
-        sed -i "s/$search_text/$replace_text/g" $SCOPE_APP_CONFIG_FILE
-
-        # replace downloaded file location
-        search_text=`create_scope_file_save_location_xml_tag $prev_day`
-        replace_text=`create_scope_file_save_location_xml_tag $day`
-        sed -i "s/$search_text/$replace_text/g" $SCOPE_APP_CONFIG_FILE
-
+        replace_day $prev_day $day
+        replace_downloaded_file_location $prev_day $day
         launch_day_job $day
 
         # update counter
