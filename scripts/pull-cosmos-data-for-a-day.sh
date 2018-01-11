@@ -22,7 +22,7 @@ function print_variables
     echo
 }
 
-function launch_cmd_in_sequence
+function pull_for_a_day
 {
     local prev_num=-1
     for num in `seq 0 1 $MAX_HOUR`
@@ -48,4 +48,4 @@ function launch_cmd_in_sequence
 }
 
 print_variables
-launch_cmd_in_sequence
+pull_for_a_day
