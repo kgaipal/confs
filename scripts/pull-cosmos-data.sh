@@ -3,6 +3,9 @@
 # this script overwrite the following xml tag in config file and keeps launching processes
 # need this start condition
 # <add key="fileNumber" value="-1"/>
+# <add key="date" value="-1"/>
+# <add key ="storecosmosfilelocation" value ="-1"/>"
+# <add key="sourcedir" value="-1"/>"
 
 # change the user only (and path if needed)
 LOGGED_IN_USER="ksgaipal"
