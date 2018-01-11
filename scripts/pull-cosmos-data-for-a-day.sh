@@ -8,9 +8,19 @@ SCOPE_APP_CONFIG_FILE=${SCOPE_APP}".config"
 TERMINAL_APP="C://msys64//mingw64.exe"
 MAX_HOUR=23
 
-function create_xml_tag
+function create_scope_file_number_xml_tag
 {
     echo "<add key=\"fileNumber\" value=\"$1\"\/>"
+}
+
+function create_scope_day_xml_tag
+{
+    echo "<add key=\"day\" value=\"$1\"\/>"
+}
+
+function create_scope_save_location_xml_tag
+{
+    echo "<add key=\"day\" value=\"$1\"\/>"
 }
 
 function print_variables
@@ -29,8 +39,8 @@ function pull_for_a_day
     do
         # prepare search format
         local num2=`printf "%02d" $num`
-        local search_text=`create_xml_tag $prev_num`
-        local replace_text=`create_xml_tag $num2`
+        local search_text=`create_scope_file_number_xml_tag $prev_num`
+        local replace_text=`create_scope_file_number_xml_tag $num2`
 
         # replace now
         sed -i "s/$search_text/$replace_text/g" $SCOPE_APP_CONFIG_FILE
