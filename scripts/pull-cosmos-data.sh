@@ -4,15 +4,17 @@
 # need this start condition
 # <add key="fileNumber" value="-1"/>
 
-BASE_APP_DIR="C://Users//ksgaipal//Documents//Cosmos"
-COSMOS_DATA_DIR_PREFIX="c:\/msys64\/home\/ksgaipal\/Downloads\/CosmosData_201712"
+# change these two only
+LOGGED_IN_USER="ksgaipal"
+BASE_COSMOS_APP_DIR="C://Users//${LOGGED_IN_USER}//Documents//Cosmos"
+COSMOS_DATA_DIR_PREFIX="C:\/Users\/${LOGGED_IN_USER}\/Downloads\/CosmosData_201712"
 
 # pull cosomos data into xml files specific
-SCOPE_APP="${BASE_APP_DIR}//PullDataFromCosmos//iscopeTool.exe"
+SCOPE_APP="${BASE_COSMOS_APP_DIR}//PullDataFromCosmos//iscopeTool.exe"
 SCOPE_APP_CONFIG_FILE=${SCOPE_APP}".config"
 
 # push xml files to SQL specific
-SCOPE_SQL_APP="${BASE_APP_DIR}//XportCosmosXMLToDB//ScopeXmlUpdate.exe"
+SCOPE_SQL_APP="${BASE_COSMOS_APP_DIR}//XportCosmosXMLToDB//ScopeXmlUpdate.exe"
 SCOPE_SQL_APP_CONFIG_FILE=${SCOPE_SQL_APP}".config"
 
 # terminal to launch (windows, bash, etc)
