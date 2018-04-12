@@ -10,9 +10,12 @@
 	co = checkout
 	last = log -1 HEAD
 	unstage = reset HEAD --
-	pr = remote prune origin
         top = checkout -b
-        prpl = "!git co dev;git pull; git pr;"
+	prremote = remote prune origin
+        prpl = "!git checkout dev; git pull; git remote prune origin;"
+
+        # https://stackoverflow.com/a/3670560
+        prlocal = "!git branch --color=never | cut -c3- | egrep -v '(dev|develop|master)'|xargs git branch -D"
 
 	# https://www.georgebrock.com/blog/useful-git-aliases/
 	graph = log --no-color --all --graph --decorate --oneline -n30
