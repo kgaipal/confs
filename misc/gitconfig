@@ -12,6 +12,7 @@
 	unstage = reset HEAD --
 	pr = remote prune origin
         top = checkout -b
+        prpl = "!git co dev;git pull; git pr;"
 
 	# https://www.georgebrock.com/blog/useful-git-aliases/
 	graph = log --no-color --all --graph --decorate --oneline -n30
