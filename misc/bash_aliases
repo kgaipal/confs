@@ -15,7 +15,7 @@ alias tree='tree -Ch'
 
 # git aliases
 alias gitb='git branch'
-alias gits='git status'
+alias gits='git status -sb'
 
 # Create an alias file for eshell
 mkdir -p $HOME/.eshell
