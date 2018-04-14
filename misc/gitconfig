@@ -11,7 +11,7 @@
 	last = log -1 HEAD
 	unstage = reset HEAD --
         createtopic = "!git checkout -b $1;"
-        switchto = "!git checkout $1; git pull; git remote prune origin;"
+        sw = "!git checkout $1; git pull; git remote prune origin;"
 
         # prune local and remote branches
         # https://stackoverflow.com/a/3670560
