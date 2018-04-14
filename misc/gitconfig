@@ -15,8 +15,8 @@
 
         # prune local and remote branches
         # https://stackoverflow.com/a/3670560
-	prremote = remote prune origin
-        prlocal = "!git branch --color=never | cut -c3- | egrep -v '(dev|develop|master)'|xargs git branch -D"
+	pruneremote = remote prune origin
+        prunelocal = "!git branch --color=never | cut -c3- | egrep -v '(dev|develop|master)'|xargs git branch -D"
 
 	# https://www.georgebrock.com/blog/useful-git-aliases/
 	graph = log --no-color --all --graph --decorate --oneline -n30
