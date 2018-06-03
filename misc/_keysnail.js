@@ -23,7 +23,6 @@ key.suspendKey           = "<f2>";
 
 // ================================= Hooks ================================= //
 
-
 hook.setHook('KeyBoardQuit', function (aEvent) {
     if (key.currentKeySequence.length) return;
 
@@ -48,7 +47,6 @@ hook.setHook('KeyBoardQuit', function (aEvent) {
         key.generateKey(aEvent.originalTarget, KeyEvent.DOM_VK_ESCAPE, true);
     }
 });
-
 
 // ============================= Key bindings ============================== //
 
