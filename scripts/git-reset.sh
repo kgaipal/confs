@@ -2,10 +2,8 @@
 
 #
 
-if [[ $# -lt 1 ]]; then
-    echo $#
-    echo "Usage: $0 DEV_BRANCH like {dev, develop, etc}"
-    exit 1
+DEV_BRANCH=dev
+if [[ $# -gt 1 ]]; then
 fi
 
 DEV_BRANCH=$1
