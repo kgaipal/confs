@@ -9,6 +9,7 @@ app-cdr/brasero
 app-crypt/seahorse
 app-editors/emacs
 app-editors/nano
+app-emulation/docker
 app-portage/cpuid2cpuflags
 app-portage/eix
 app-portage/flaggie
@@ -45,7 +46,6 @@ media-video/totem
 net-misc/drive
 net-misc/dropbox
 net-p2p/transmission
-sci-mathematics/rstudio
 sys-apps/dmidecode
 sys-apps/dog
 sys-apps/gnome-disk-utility
@@ -53,6 +53,7 @@ sys-apps/mlocate
 sys-apps/pciutils
 sys-apps/ripgrep
 sys-apps/usbutils
+sys-block/gparted
 sys-boot/grub
 sys-devel/clang
 sys-devel/gdb
@@ -60,6 +61,7 @@ sys-firmware/b43-firmware
 sys-fs/simple-mtpfs
 sys-kernel/genkernel-next
 sys-kernel/gentoo-sources
+sys-kernel/gentoo-sources:4.9.49-r1
 sys-kernel/linux-firmware
 sys-power/cpupower
 sys-power/ncpufreqd
