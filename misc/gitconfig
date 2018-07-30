@@ -34,7 +34,7 @@
 [credential "https://kgaipal.visualstudio.com/"]
 	helper = store
 [credential "https://microsoft.visualstudio.com/"]
-	helper = store
+	helper = manager
 [credential "https://github.com/"]
 	helper = store
 [gc]
@@ -45,3 +45,6 @@
 # git config --global core.preloadindex true   # default since v2.1
 # git config --global core.fscache true        # default since v2.8
 # git config --global gc.auto 256
+
+[winUpdater]
+	recentlySeenVersion = 2.18.0.windows.1
