@@ -1,7 +1,7 @@
 [user]
 	name = Kshitij Gaipal
 [core]
-	editor = emacsclient
+	# editor = emacsclient
 	excludesfile = ~/.gitignore_global
 	whitespace = trailing-space
 	fscache = true
@@ -33,8 +33,12 @@
 	decorate = true
 [credential "https://kgaipal.visualstudio.com/"]
 	helper = store
-[credential "https://microsoft.visualstudio.com/"]
+[credential "microsoft.visualstudio.com"]
 	helper = manager
+	interactive = never
+	authority = AAD
+	validate = false
+	username = ksgaipal
 [credential "https://github.com/"]
 	helper = store
 [gc]
@@ -47,4 +51,7 @@
 # git config --global gc.auto 256
 
 [winUpdater]
-	recentlySeenVersion = 2.18.0.windows.1
+	recentlySeenVersion = 2.19.0.windows.1
+[credential]
+	modalPrompt = true
+	writeLog = false
