@@ -17,9 +17,6 @@
 
 	# https://www.georgebrock.com/blog/useful-git-aliases/
 	graph = log --no-color --all --graph --decorate --oneline -n30
-
-        # TODO (kgaipal): remove this in favor of gitflow
-        sw = "!git checkout dev; git pull;"
 [push]
 	default = simple
 [color]
