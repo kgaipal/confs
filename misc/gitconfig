@@ -38,6 +38,7 @@
 	interactive = never
 	authority = AAD
 	validate = false
+	username = ksgaipal
 [credential "https://github.com/"]
 	helper = store
 [gc]
