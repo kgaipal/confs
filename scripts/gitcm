@@ -1,12 +1,12 @@
 #!/bin/bash
 
-if [[ $# -lt 1 ]]; then
-    COMMIT_MESSAGE="<no commit message>"
-else
-    DEV_BRANCH=$1
+COMMIT_MESSAGE="<no commit message>"
+
+if [[ $# -ge 1 ]]; then
+    COMMIT_MESSAGE=$1
     shift 1
 fi
 
-git commit -m $COMMIT_MESSAGE
+git commit -m "${COMMIT_MESSAGE}"
 
 echo "done"
