@@ -49,3 +49,5 @@
 # git config --global core.preloadindex true   # default since v2.1
 # git config --global core.fscache true        # default since v2.8
 # git config --global gc.auto 256
+[winUpdater]
+	recentlySeenVersion = 2.19.0.windows.1
