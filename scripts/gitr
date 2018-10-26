@@ -8,6 +8,6 @@ else
 fi
 
 echo "Using branch:$DEV_BRANCH"
-git co $DEV_BRANCH && git pull && git co -- . && git pruneall
+git co $DEV_BRANCH && git co -- . && git pruneall && git pull
 
 echo "done"
