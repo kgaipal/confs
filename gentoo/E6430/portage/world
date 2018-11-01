@@ -9,7 +9,6 @@ app-cdr/brasero
 app-crypt/seahorse
 app-editors/emacs
 app-editors/nano
-app-emulation/docker
 app-portage/cpuid2cpuflags
 app-portage/eix
 app-portage/flaggie
@@ -36,7 +35,6 @@ gnome-extra/chrome-gnome-shell
 gnome-extra/gnome-boxes
 gnome-extra/gnome-tweak-tool
 gnome-extra/gnome-user-share
-gnome-extra/nautilus-dropbox
 media-fonts/lohit-fonts
 media-gfx/eog
 media-gfx/evoluspencil
@@ -59,7 +57,6 @@ sys-firmware/b43-firmware
 sys-fs/simple-mtpfs
 sys-kernel/genkernel-next
 sys-kernel/gentoo-sources
-sys-kernel/gentoo-sources:4.9.49-r1
 sys-kernel/linux-firmware
 sys-power/cpupower
 sys-power/ncpufreqd
