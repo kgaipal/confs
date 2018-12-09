@@ -8,7 +8,6 @@
 # USE="networkmanager" until this becomes part of profile
 >=gnome-base/gnome-control-center-3.8.3 networkmanager
 
-
 # required by net-libs/webkit-gtk-2.18.2::gentoo[gstreamer]
 # required by net-libs/gnome-online-accounts-3.22.5::gentoo
 # required by dev-libs/libgdata-0.17.8::gentoo[gnome-online-accounts]
